@@ -9,10 +9,24 @@
 angular.module('directiveTestApp')
   .directive('mxaEvent', function () {
     return {
-      template: '<div></div>',
+      template: '<img src="{{src}}" ng-mouseenter="onenter()" ng-mouseleave="onleave()" />' ,
       restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the mxaEvent directive');
+      scope:{
+      	preSrc: '@',
+      	postSrc: '@'
+      },
+      link: function(scope, element, attrs, controller) {
+
+        scope.src= scope.preSrc;
+        scope.onenter = function(){
+        	console.log("enter");
+        	scope.src = scope.postSrc;
+        }
+        scope.onleave = function(){
+        	console.log("leave");
+        	scope.src=scope.preSrc;
+        }
+
       }
     };
   });
