@@ -8,7 +8,7 @@
  */
  
 angular.module('directiveTestApp')
-  .directive('mxaFblogin', function ($window) {
+  .directive('mxaFblogin', function ($window, UserAuthService) {
     return {
       template: '<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>',
       restrict: 'E',
@@ -36,6 +36,8 @@ angular.module('directiveTestApp')
 			  }(document, 'script', 'facebook-jssdk'));
 				
       	$window.checkLoginState = function(){
+      		var user = UserAuthService;
+      		user.checkLoginState();
       		console.log("onlogin event was called");
       	}
       }
