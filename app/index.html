@@ -13,6 +13,13 @@
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
+    <script type="text/javascript" src="https://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+    <script>
+      var parse_app_id = "Uk00xv536Y7jwNUtwXKUwKpo3zU16KKmVnUPaiyb";
+      var parse_js_key = "85EGgk7ruUdSiORTqeexhnObs49i0pnMDwgqwUBA";
+      Parse.initialize(parse_app_id, parse_js_key);
+    </script>
+
   </head>
   <body ng-app="directiveTestApp">
     <!--[if lte IE 8]>
@@ -43,11 +50,16 @@
 
     <div class="container">
 
-    <mxa-event pre-src="https://scontent.xx.fbcdn.net/hprofile-xfa1/v/t1.0-1/c129.37.463.463/s50x50/263333_237678156265989_3788927_n.jpg?oh=74cbdb8e2f95c593cbde74b423c15af1&oe=570A134A" post-src="https://scontent.xx.fbcdn.net/hprofile-xfa1/v/t1.0-1/p50x50/12347809_1496678610637408_8569573742100256824_n.jpg?oh=fdbb1e89a192265602879666be6d37c5&oe=56DA35A1"/>
+      <div align="center">
+        <mxa-fblogin></mxa-fblogin>
+      </div>
 
-    <div ng-view=""></div>
+      <mxa-event pre-src="https://scontent.xx.fbcdn.net/hprofile-xfa1/v/t1.0-1/c129.37.463.463/s50x50/263333_237678156265989_3788927_n.jpg?oh=74cbdb8e2f95c593cbde74b423c15af1&oe=570A134A" post-src="https://scontent.xx.fbcdn.net/hprofile-xfa1/v/t1.0-1/p50x50/12347809_1496678610637408_8569573742100256824_n.jpg?oh=fdbb1e89a192265602879666be6d37c5&oe=56DA35A1"></mxa-event>
+
+      <div ng-view=""></div>
+
+
     </div>
-
     <div class="footer">
       <div class="container">
         <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
@@ -83,6 +95,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
         <script src="scripts/directives/mxa-event.js"></script>
+        <script src="scripts/directives/mxa-fblogin.js"></script>
         <!-- endbuild -->
 </body>
 </html>
