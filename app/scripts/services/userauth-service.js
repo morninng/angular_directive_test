@@ -9,7 +9,7 @@
  */
 
 angular.module('directiveTestApp')
-  .factory('UserAuthService', function () {
+  .factory('UserAuthService', function ($timeout) {
     // Service logic
     // ...
 
@@ -27,7 +27,7 @@ angular.module('directiveTestApp')
         user.loggedIn = true;
         user.first_name = currentUser.get("FirstName");
         user.last_name = currentUser.get("LastName");
-        user.pict_src = currentUser.get("link");
+        user.pict_src = currentUser.get("Profile_picture");
       });
     }
   };
@@ -93,7 +93,7 @@ angular.module('directiveTestApp')
     user_ext.set("link", response.link );
     user_ext.set("timezone", response.timezone );
     user_ext.set("user_obj", currentUser );
-    user_ext_ACL = new Parse.ACL(currentUser);
+    var user_ext_ACL = new Parse.ACL(currentUser);
     user_ext_ACL.setPublicReadAccess(true);
     user_ext.setACL(user_ext_ACL);
 
@@ -102,20 +102,20 @@ angular.module('directiveTestApp')
     currentUser.set("LastName", response.last_name);
     currentUser.set("Profile_picture", response.picture.data.url);
     currentUser.set("ext_data",user_ext);
+    /*
     if(lang_type){
       currentUser.set("lang_type",lang_type);
     }
+    */
     currentUser.save(null, {
     success: function(){
-      if(document.referrer){
-        window.location.href = document.referrer;
-      }else{
-        location.reload();
-      }
+      alert("succeed login");
+
+
+
     },
     error: function(obj,error){
       alert("fail to save");
-      window.location.href = "/event/showEventList";
     }
     });
   }
@@ -124,14 +124,17 @@ angular.module('directiveTestApp')
 
 
     user.logout = function() {
-      user.loggedIn = false;
-      user.first_name = null;
-      user.last_name = null;
-      user.pict_src = null;
-      Parse.User.logOut();
+      $timeout(function() {
+        user.loggedIn = false;
+        user.first_name = null;
+        user.last_name = null;
+        user.pict_src = null;
+        Parse.User.logOut();
+      })
     };
 
-    // Public API here
+    //initial setting
+    loadFromLocal();
 
     return user;
   });

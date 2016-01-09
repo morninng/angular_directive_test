@@ -40,6 +40,12 @@ angular.module('directiveTestApp')
       		user.checkLoginState();
       		console.log("onlogin event was called");
       	}
+      	if($window.facebook_shown){
+      		FB.XFBML.parse();
+      	}
+      	$window.facebook_shown = true;
+      	// http://stackoverflow.com/questions/15452786/facebook-login-button-using-angularjs
+
       }
     };
   });
