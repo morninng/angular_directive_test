@@ -476,3 +476,33 @@ module.exports = function (grunt) {
     'build'
   ]);
 };
+
+
+
+
+
+module.exports = function (grunt2) {
+
+  grunt2.loadNpmTasks('grunt-ftp-deploy');
+
+  grunt2.initConfig({
+
+    'ftp-deploy': {
+      build: {
+        auth: {
+          host: 'webdemo.dac.co.jp',
+          port: 21,
+          authKey: 'key1'
+        },
+        src: '/home/morninng/Angular/Directive_test/app',
+        dest: '/public_html/mixidea/angular/Directive_test/app',
+        exclusions: ['/home/morninng/Angular/Directive_test/app/.sass-cache']
+      }
+    }
+  });
+
+  grunt2.registerTask('check', function(){
+    grunt2.log.writeln("aaa");
+  });
+  grunt2.registerTask('deploy',['ftp-deploy']);
+}

@@ -3,3 +3,7 @@
 /.tmp
 /.sass-cache
 /bower_components
+
+/app/.sass-cache
+/app/styles/*.css.map
+/app/styles/*.map
