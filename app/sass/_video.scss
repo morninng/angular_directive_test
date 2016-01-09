@@ -1,0 +1,13 @@
+
+@mixin inbox-format {
+	height:100px;
+}
+
+#video_area{
+	background-color:red;
+	width:30px;
+}
+
+#video_input{
+	@include inbox-format;
+}

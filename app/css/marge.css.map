@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";AAAA,iBAAiB;EAChB,gBAAgB,EAAC,KAAK;;;;ACIvB,WAAW;EACV,gBAAgB,EAAC,GAAG;EACpB,KAAK,EAAC,IAAI;;;;AAGX,YAAY;EARX,MAAM,EAAC,KAAK",
+"sources": ["../sass/_participant_table.scss","../sass/_video.scss"],
+"names": [],
+"file": "marge.css"
+}
