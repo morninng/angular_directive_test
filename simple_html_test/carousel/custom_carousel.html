@@ -26,23 +26,23 @@
 
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
+    <div class="carousel-inner" >
       <div class="item active">
-        <img src="img_chania.jpg" alt="Chania" width="460" height="345">
+        <img src="img_chania.jpg"  width="460" height="345">
         <div align="center">
           <input class="crousel_next" type="button" value="next">
         </div>
       </div>
 
       <div class="item">
-        <img src="img_chania2.jpg" alt="Chania" width="460" height="345">
+        <img src="img_chania2.jpg"  width="460" height="345">
         <div align="center">
           <input class="crousel_next" type="button" value="next">
         </div>
       </div>
     
       <div class="item">
-        <img src="img_flower.jpg" alt="Flower" width="460" height="345">
+        <img src="img_flower.jpg" width="460" height="345">
       </div>
 
       <div class="item">
@@ -56,17 +56,12 @@
 <script>
 $(document).ready(function(){
     // Activate Carousel
+    
     $(".crousel_next").click(function(){
         $("#myCarousel").carousel("next");
+        $('#myCarousel').carousel('pause');
     });
-    
-    // Enable Carousel Controls
-    $(".left").click(function(){
-        $("#myCarousel").carousel("prev");
-    });
-    $(".right").click(function(){
-        $("#myCarousel").carousel("next");
-    });
+
 });
 </script>
 
