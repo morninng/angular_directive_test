@@ -1,16 +1,52 @@
 <div>
+  <div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner" >
+      <div class="item active">
+        <div align="center">
+          <br>
+          <div>You can login Mixidea through Facebook</div>
+          <br>
+  			  <div align="center" style="width:100%">
+  			     <mxa-fblogin></mxa-fblogin>
+  			  </div>
+  				<br>
+        </div>
+        <div align="center" style="width:100%">
+          <br>
+				  <input type="button" value="cancel login" ng-click="close_modal()">
+          <br>
+        </div>
+      </div>
 
-
-
-  <div align="center">
-     <mxa-fblogin></mxa-fblogin>
+      <div class="item">
+        <div align="center">select your language type for your speech transcription.
+          Even if you cannot find appropriate one, please select one.
+        </div>
+        <div>
+          <input type="radio" ng-model="user.lang_type" value="En-Au">English Australia<br>
+          <input type="radio" ng-model="user.lang_type" value="En-Ca">English Canada<br>
+          <input type="radio" ng-model="user.lang_type" value="En-In">English India<br>
+          <input type="radio" ng-model="user.lang_type" value="En-NZ">English NewZealand<br>
+          <input type="radio" ng-model="user.lang_type" value="En-SA">English South Africa<br>
+          <input type="radio" ng-model="user.lang_type" value="En-UK">English United Kingdom<br>
+          <input type="radio" ng-model="user.lang_type" value="En-US">English United States<br>
+      	</div>
+        <input type="button" value="confirm" ng-click="click_language_select()">
+      </div>
+      <div class="item">
+        <div align="center">input your own introduction such as your special knowledge, interest, or  debate award history.</div>
+        <div align="center">
+          <div>
+            <br>
+            <input type="text" ng-model="user.user_introduction" style="width:80%; height:150px">
+            <br>
+          </div>
+          <div>
+            <input type="button" value="skip input" ng-click="close_modal()">
+            <input type="button" value="confirm" ng-click="click_introduction_input()">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-	<br><br>
-	<div align="center">aaaa</div>
-	<br><br>{{aaa}}
-	<input type="button" value="cancel" ng-click="close_modal()">
-	<input type="button" value="complete" ng-click="close_modal()">
-
-
-
 </div>

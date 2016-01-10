@@ -10,14 +10,18 @@
 
 angular.module('directiveTestApp')
   .factory('UserAuthService', function ($timeout) {
-    // Service logic
-    // ...
+
 
   var user = {
    loggedIn: false,
    first_name: null,
    last_name: null,
-   pict_src: null
+   pict_src: null,
+   regist_complete: false,
+   error_modal_remove: false,
+   lang_type: null,
+   user_introduction: null,
+   intro_complete: false
   };
 
   var loadFromLocal = function() {
@@ -28,6 +32,11 @@ angular.module('directiveTestApp')
         user.first_name = currentUser.get("FirstName");
         user.last_name = currentUser.get("LastName");
         user.pict_src = currentUser.get("Profile_picture");
+        user.lang_type = currentUser.get("lang_type");
+        var ext_data = currentUser.get("ext_data");
+        if(ext_data){
+          user.user_introduction = ext_data.get("user_introduction");
+        }
       });
     }
   };
@@ -108,19 +117,44 @@ angular.module('directiveTestApp')
     }
     */
     currentUser.save(null, {
-    success: function(){
-      alert("succeed login");
+      success: function(){
 
-
-
-    },
-    error: function(obj,error){
-      alert("fail to save");
-    }
+        alert("succeed login");
+        $timeout(function() {
+          user.regist_complete = true;
+        });
+      },
+      error: function(obj,error){
+        alert("fail to save");
+      }
     });
   }
 
  
+    user.update_introduction = function(intro_text) {
+      console.log(intro_text);
+      var currentUser = Parse.User.current();
+      var ext_data = currentUser.get("ext_data");
+      if(!ext_data){
+        var User_Extension = Parse.Object.extend("User_Extension");
+        ext_data = new User_Extension();
+        var user_ext_ACL = new Parse.ACL(currentUser);
+        user_ext_ACL.setPublicReadAccess(true);
+        ext_data.setACL(user_ext_ACL);
+      }
+      ext_data.set("self_intro", intro_text);
+      currentUser.set("ext_data",ext_data);
+      currentUser.save(null, {
+        success: function(){
+          $timeout(function() {
+            user.intro_complete = true;
+          });
+        },
+        error: function(obj,error){
+          alert("fail to save");
+        }
+      });
+    };
 
 
     user.logout = function() {
