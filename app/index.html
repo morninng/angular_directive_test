@@ -25,17 +25,55 @@
   </head>
   <body ng-app="directiveTestApp">
 
-<div id="video_area"> aaa </div>
 
     <!-- Add your site or application content here -->
-    <header ng-controller="HeaderUserCtrl">
-      <div ng-show="user.loggedIn">
-        <img syle="width:30px;height:30px" src="{{user.pict_src}}">
-        <input type="button" ng-click="user.logout()" value="Log Out">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Mixidea</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="/event_list">EventList</a></li>
+          <li><a href="/my_page">MyPage</a></li> 
+        </ul>
+
+        <div ng-controller="HeaderUserCtrl">
+          <div ng-show="user.loggedIn">
+            <ul class="nav navbar-nav navbar-right" >
+              <li>
+                <img syle="width:30px;height:30px" src="{{user.pict_src}}">
+              </li>
+              <li>
+                <a href="" ng-click="user.logout()">
+                  <span class="glyphicon glyphicon-log-out"></span> Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div ng-show="!user.loggedIn">
+            <ul class="nav navbar-nav navbar-right" >
+              <li>
+                <a href="" ng-click="show_lgoin_form()">
+                  <span class="glyphicon glyphicon-log-in"></span> Login
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+<!--
+      <div  ng-controller="HeaderUserCtrl">
+        <div ng-show="user.loggedIn">
+          <img syle="width:30px;height:30px" src="{{user.pict_src}}">
+          <input type="button" ng-click="user.logout()" value="Log Out">
+        </div>
+        <div ng-show="!user.loggedIn">
+          <input type="button" ng-click="show_lgoin_form()" value="log In"></login>
+        </div>
       </div>
-      <div ng-show="!user.loggedIn">
-        <input type="button" ng-click="show_lgoin_form()" value="log In"></login>
-      </div>
+-->
+
+
     </header>
 
 
