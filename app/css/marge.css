@@ -150,5 +150,39 @@
     -webkit-transform: rotate(-360deg);
   }
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_strapoverwrite\.scss}line{font-family:\000033}}
+.nav > li {
+  float: left;
+  display: inline-block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_strapoverwrite\.scss}line{font-family:\000038}}
+.navbar-header {
+  float: left !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_strapoverwrite\.scss}line{font-family:\0000312}}
+.navbar-nav {
+  margin: 0;
+  float: left !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_strapoverwrite\.scss}line{font-family:\0000317}}
+.navbar-nav > li > a {
+  padding-top: 14.5px;
+  padding-bottom: 14.5px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_strapoverwrite\.scss}line{font-family:\0000322}}
+.navbar-right {
+  float: right !important;
+}
+
+@media screen and (max-width: 480px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_strapoverwrite\.scss}line{font-family:\0000326}}
+  .mobile-hide {
+    display: none;
+  }
+}
 
 /*# sourceMappingURL=marge.css.map */

@@ -1,0 +1,29 @@
+
+
+.nav>li {
+    float: left;
+    display: inline-block;
+}
+
+.navbar-header {
+	float: left !important;
+}
+
+.navbar-nav {
+    margin: 0;
+    float: left !important;
+}
+
+.navbar-nav>li>a {
+    padding-top: 14.5px;
+    padding-bottom: 14.5px;
+}
+
+.navbar-right {
+    float: right !important;
+}
+@media screen and (max-width: 480px){
+	.mobile-hide{
+		display:none
+	}
+}

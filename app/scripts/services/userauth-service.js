@@ -17,11 +17,11 @@ angular.module('directiveTestApp')
    first_name: null,
    last_name: null,
    pict_src: null,
-   regist_complete: false,
    error_modal_remove: false,
    lang_type: null,
    user_introduction: null,
    intro_complete: false,
+   regist_complete: false,
    fb_login_show: true,
    fb_login_loading_show: false,
   };
@@ -49,7 +49,6 @@ angular.module('directiveTestApp')
 
   user.checkLoginState = function() {
 
-
     $timeout(function() {
       user.fb_login_show = false;
       user.fb_login_loading_show = true;
@@ -58,6 +57,7 @@ angular.module('directiveTestApp')
     Parse.FacebookUtils.logIn(null, {
       success: function(user) {
         if (user.existed()) {
+          user.loggedIn = true;
           console.log("user data already registered");
           FetchUserData();
         } else {
@@ -195,10 +195,16 @@ angular.module('directiveTestApp')
 
     user.logout = function() {
       $timeout(function() {
+        user.regist_complete = false;
         user.loggedIn = false;
+        user.fb_login_show = true;
+        user.fb_login_loading_show = false;
+        user.lang_type = false
+
         user.first_name = null;
         user.last_name = null;
         user.pict_src = null;
+        user.user_introduction = null;
         Parse.User.logOut();
       })
     };

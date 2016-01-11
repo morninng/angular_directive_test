@@ -29,18 +29,19 @@
     <!-- Add your site or application content here -->
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
+
         <div class="navbar-header">
           <a class="navbar-brand" href="/">Mixidea</a>
+          <ul class="nav navbar-nav">
+            <li><a href="/event_list" class="active">EventList</a></li>
+            <li><a href="/my_page">MyPage</a></li> 
+          </ul>
         </div>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="/event_list">EventList</a></li>
-          <li><a href="/my_page">MyPage</a></li> 
-        </ul>
+
 
         <div ng-controller="HeaderUserCtrl">
           <div ng-show="user.loggedIn">
-            <ul class="nav navbar-nav navbar-right" >
+            <ul class="nav  navbar-right mobile-hide" >
               <li>
                 <img syle="width:30px;height:30px" src="{{user.pict_src}}">
               </li>
@@ -52,7 +53,7 @@
             </ul>
           </div>
           <div ng-show="!user.loggedIn">
-            <ul class="nav navbar-nav navbar-right" >
+            <ul class="nav  navbar-right" >
               <li>
                 <a href="" ng-click="show_lgoin_form()">
                   <span class="glyphicon glyphicon-log-in"></span> Login
