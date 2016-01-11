@@ -21,10 +21,12 @@ angular.module('directiveTestApp')
    error_modal_remove: false,
    lang_type: null,
    user_introduction: null,
-   intro_complete: false
+   intro_complete: false,
+   fb_login_show: true,
+   fb_login_loading_show: false,
   };
 
-  var loadFromLocal = function() {
+  var loadOwnData = function() {
     var currentUser = Parse.User.current();
     if (currentUser) {
       $timeout(function() {
@@ -33,10 +35,12 @@ angular.module('directiveTestApp')
         user.last_name = currentUser.get("LastName");
         user.pict_src = currentUser.get("Profile_picture");
         user.lang_type = currentUser.get("lang_type");
+        /*
         var ext_data = currentUser.get("ext_data");
         if(ext_data){
           user.user_introduction = ext_data.get("user_introduction");
         }
+        */
       });
     }
   };
@@ -45,14 +49,21 @@ angular.module('directiveTestApp')
 
   user.checkLoginState = function() {
 
+
+    $timeout(function() {
+      user.fb_login_show = false;
+      user.fb_login_loading_show = true;
+    });
+
     Parse.FacebookUtils.logIn(null, {
       success: function(user) {
-        if (!user.existed()) {
+        if (user.existed()) {
           console.log("user data already registered");
+          FetchUserData();
         } else {
           console.log("New User registration");
+          RegistFbGraphData();
         }
-        RegistFbGraphData();
       },
       error: function(user, error) {
         alert("User cancelled the Facebook login or did not fully authorize.");
@@ -60,6 +71,37 @@ angular.module('directiveTestApp')
     });
   }
 
+  var FetchUserData = function(){
+    var currentUser = Parse.User.current();
+    var User = Parse.Object.extend("User");
+    var user_query = new Parse.Query(User);
+    user_query.include("ext_data");
+    user_query.get(currentUser.id, {
+      success: function(user_obj){
+        $timeout(function() {
+          user.first_name = user_obj.get("FirstName");
+          user.last_name = user_obj.get("LastName");
+          user.pict_src = user_obj.get("Profile_picture");
+          user.lang_type = user_obj.get("lang_type");
+          var ext_data = user_obj.get("ext_data");
+          if(ext_data){
+            user.user_introduction = ext_data.get("self_intro");
+          }
+          if(!user.first_name){
+            RegistFbGraphData();
+          }else{
+            user.loggedIn = true;
+            user.regist_complete = true;
+          }
+        });
+      },
+      error: function(){
+        console.log("error to retrieve own data");
+      }
+    })
+
+
+  }
 
 
 
@@ -111,14 +153,8 @@ angular.module('directiveTestApp')
     currentUser.set("LastName", response.last_name);
     currentUser.set("Profile_picture", response.picture.data.url);
     currentUser.set("ext_data",user_ext);
-    /*
-    if(lang_type){
-      currentUser.set("lang_type",lang_type);
-    }
-    */
     currentUser.save(null, {
       success: function(){
-
         alert("succeed login");
         $timeout(function() {
           user.regist_complete = true;
@@ -168,7 +204,7 @@ angular.module('directiveTestApp')
     };
 
     //initial setting
-    loadFromLocal();
+    loadOwnData();
 
     return user;
   });

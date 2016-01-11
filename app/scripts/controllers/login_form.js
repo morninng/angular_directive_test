@@ -22,7 +22,7 @@ angular.module('directiveTestApp')
         if(!$scope.user.lang_type){
           carousel_element.carousel(1);
         carousel_element.carousel('pause');
-        }else if(!$scope.user.user_profile){
+        }else if(!$scope.user.user_introduction){
           carousel_element.carousel(2);
         carousel_element.carousel('pause');
         }else{
