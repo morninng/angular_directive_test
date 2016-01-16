@@ -20,6 +20,11 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
+      .when('/eventlist', {
+        templateUrl: 'views/eventlist.html',
+        controller: 'EventlistCtrl',
+        controllerAs: 'eventlist'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     <!-- endbuild -->
+
+
+
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
@@ -33,12 +36,10 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/">Mixidea</a>
           <ul class="nav navbar-nav">
-            <li><a href="/event_list" class="active">EventList</a></li>
+            <li><a href="#eventlist" class="active">EventList</a></li>
             <li><a href="/my_page">MyPage</a></li> 
           </ul>
         </div>
-
-
         <div ng-controller="HeaderUserCtrl">
           <div ng-show="user.loggedIn">
             <ul class="nav  navbar-right mobile-hide" >
@@ -62,30 +63,15 @@
             </ul>
           </div>
         </div>
-<!--
-      <div  ng-controller="HeaderUserCtrl">
-        <div ng-show="user.loggedIn">
-          <img syle="width:30px;height:30px" src="{{user.pict_src}}">
-          <input type="button" ng-click="user.logout()" value="Log Out">
-        </div>
-        <div ng-show="!user.loggedIn">
-          <input type="button" ng-click="show_lgoin_form()" value="log In"></login>
-        </div>
       </div>
--->
+    </nav>
 
 
-    </header>
-
-
-
-
-    <div class="container">
-
-      <div ng-view=""></div>
-
-
-    </div>
+    
+      
+    <div ng-view=""></div>
+    
+    
     <div class="footer">
       <div class="container">
       </div>
@@ -117,6 +103,8 @@
         <script src="scripts/services/userauth-service.js"></script>
         <script src="scripts/controllers/header_user.js"></script>
         <script src="scripts/controllers/login_form.js"></script>
+        <script src="scripts/controllers/eventlist.js"></script>
+        <script src="scripts/controllers/create_event.js"></script>
         <!-- endbuild -->
 </body>
 </html>

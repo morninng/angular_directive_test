@@ -1,0 +1,94 @@
+
+
+<div id="create_event_container">
+	<h2>Create Event</h2>
+
+	<form name="event_create_form" novalidate>
+		<div>
+			<p>select date of the event</p>
+			<span class="req_message" ng-show="!event_date">mandatory field</span>
+			<span class="show_selected" ng-show="event_date">{{event_date | date:'fullDate' }}</span>
+			<div class="event_create_calendar">
+				<uib-datepicker ng-model="event_date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></uib-datepicker>
+			</div>
+		</div>
+
+		<div>
+			<p>decide time of the event</p>
+			<span class="req_message" ng-show="!show_time">mandatory field</span>
+			<span class="show_selected" ng-show="show_time">
+				{{event_time | date:'shortTime' }}
+			</span>
+			<div>
+				<uib-timepicker ng-model="event_time" ng-change="time_changed()"  hour-step="1" minute-step="15" show-meridian="true"></uib-timepicker>
+			</div>
+		</div>
+
+		<div>
+			<p>Abstract context what you want to discuss</p>
+			<span class="req_message" ng-show="event_create_form.context.$error.required">mandatory field</span><span class="req_message" ng-show="event_create_form.context.$error.maxlength">should be less than 10 words</span>
+			<div>
+			<textarea name="context" ng-model="context" ng-maxlength="10" ng-required="true" rows=3 placeholder="economy, politics, religion, recent affair etc"> </textarea>
+			</div>
+		</div>
+		<br>
+
+		<div>
+			<p>style</p>
+			<span class="req_message" ng-show="event_create_form.deb_skill.$error.required">mandatory field</span>
+			<div>
+			<input type="radio" name="style" ng-model="deb_style" value ="NA" ng-required="!deb_style">NA<br>
+			<input type="radio" name="style" ng-model="deb_style" value ="Asian" ng-required="!deb_style">Asian<br>
+			<input type="radio" name="style" ng-model="deb_style" value ="BP" ng-required="!deb_style">BP (not recommended)<br>
+			</div>
+		</div>
+
+		<br>
+		<div>
+			<p>expected debate skill</p>
+			<div>
+				<input type="radio" name="deb_skill" ng-model="exp_deb_skill" value ="Premium">Very High: International tournament level<br>
+				<input type="radio" name="deb_skill" ng-model="exp_deb_skill" value ="High">High: Domestic premium tournament level <br>
+				<input type="radio" name="deb_skill" ng-model="exp_deb_skill" value ="Medium">Medium: one or two year debate experience   <br>
+				<input type="radio" name="deb_skill" ng-model="exp_deb_skill" value ="Beginner"> Beginner: Just started practicing debate <br>
+			</div>
+		</div>
+		<br>
+
+		<div>
+			<p>Expected language skill</p>
+			<div>
+				<input type="radio" ng-model="exp_lang_skil" value ="Native">Native<br>
+				<input type="radio" ng-model="exp_lang_skil" value ="ESL">English as a second language <br>
+				<input type="radio" ng-model="exp_lang_skil" value ="EFL1">English as a foreign language <br>
+				<input type="radio" ng-model="exp_lang_skil" value ="EFL2"> English as a Foreign language with a limited speaking skill <br>
+			</div>
+		</div>
+
+
+		<div>
+			<p>motion</p>
+			<div>
+				<input class="event_motion_input" name="motion" ng-required="true" type="text" placeholder="motion can be decided later">
+			</div>
+		</div>
+
+		<p>prerequisit</p>
+		<div>
+			<div>
+			<textarea placeholder="reading article, investigate"></textarea>
+			</div>
+		</div>
+
+		<br>
+		<div>
+			<div align="center">
+				<input type="button" ng-click="click_create()" value = "create">
+				<input type="button" ng-click="click_cancel()" value = "cancel">
+			</div>
+		</div>
+
+	</form>
+</div>
+<br><br><br>
+

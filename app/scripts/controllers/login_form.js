@@ -13,6 +13,12 @@ angular.module('directiveTestApp')
 
   	$scope.user = UserAuthService;
 
+    var current_date = new Date();
+    var minutes = current_date.getMinutes();
+    var additional_minute = 15- (minutes % 15);
+    var set_date = current_date + additional_minute*60*1000;
+    
+    $scope.dt  = set_date;
 
   	$scope.regist_comp_watch_cancel = 
      $scope.$watch("user.regist_complete", function(){

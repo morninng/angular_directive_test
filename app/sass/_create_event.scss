@@ -1,0 +1,39 @@
+#create_event_container{
+	
+	.event_motion_input{
+		width:90%;
+	}
+
+	p{
+		text-decoration:underline;
+		margin-bottom:0px;
+	}
+	>div{
+		width:100%;
+
+		.event_create_calendar{
+			width:90%;
+			margin: 0 auto;
+		}
+@media screen and (max-width: 480px) {
+		.event_create_calendar{
+			width:100%;
+			margin: 0 auto;
+		}
+}
+
+		div{
+			width:90%;
+			margin: 0 auto;
+		}
+		textarea{
+		width:90%;
+		}
+	}
+	.req_message{
+		color:red;
+	}
+	.show_selected{
+		color:red;
+	}
+}
