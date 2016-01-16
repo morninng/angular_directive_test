@@ -14,15 +14,9 @@ angular.module('directiveTestApp')
 
     var current_date = new Date(); 
     $scope.minDate = current_date.setDate(current_date.getDate()-1);
-    current_date.setMinutes(0);
-    current_date.setHours(current_date.getHours()+1);
     var init_time = new Date(2015,1,1,0,0);
     $scope.event_time = init_time;
     $scope.show_time = false;
-//    $scope.event_time  = current_date;
-//    $scope.exp_deb_skill = "Medium";
-//    $scope.exp_lang_skil = "EFL1";
-//    $scope.deb_style = "NA";
 
     $scope.time_changed = function(){
       $scope.show_time = true;
@@ -39,6 +33,10 @@ angular.module('directiveTestApp')
       event_date.setHours($scope.event_time.getHours());
       event_date.setMinutes($scope.event_time.getMinutes());
       console.log(event_date);
+
+
+
+
       
 		}
 
