@@ -17,12 +17,28 @@ angular.module('directiveTestApp')
     var init_time = new Date(2015,1,1,0,0);
     $scope.event_time = init_time;
     $scope.show_time = false;
+    $scope.context_maxchar = 10;
 
     $scope.time_changed = function(){
       $scope.show_time = true;
     }
 
   	$scope.click_create = function(){
+
+      //validation of input context
+      if(!$scope.event_date || 
+        !$scope.context || 
+        $scope.context.length > $scope.context_maxchar  || 
+        !$scope.show_time){
+        alert("input data error");
+        return;
+      }else{
+        
+      }
+
+
+
+
   		console.log("create button is clicked");
       var date_time = new Date();
       date_time.setYear($scope.event_date.getFullYear());

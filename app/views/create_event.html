@@ -8,8 +8,9 @@
 			<p>select date of the event</p>
 			<span class="req_message" ng-show="!event_date">mandatory field</span>
 			<span class="show_selected" ng-show="event_date">{{event_date | date:'fullDate' }}</span>
+
 			<div class="event_create_calendar">
-				<uib-datepicker ng-model="event_date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></uib-datepicker>
+				<uib-datepicker name="date" ng-model="event_date" min-date="minDate" show-weeks="true" class="well well-sm" custom-class="getDayClass(date, mode)"></uib-datepicker>
 			</div>
 		</div>
 
@@ -26,7 +27,7 @@
 
 		<div>
 			<p>Abstract context what you want to discuss</p>
-			<span class="req_message" ng-show="event_create_form.context.$error.required">mandatory field</span><span class="req_message" ng-show="event_create_form.context.$error.maxlength">should be less than 10 words</span>
+			<span class="req_message" ng-show="event_create_form.context.$error.required">mandatory field</span><span class="req_message" ng-show="event_create_form.context.$error.maxlength">should be less than {{context_maxchar}} words</span>
 			<div>
 			<textarea name="context" ng-model="context" ng-maxlength="10" ng-required="true" rows=3 placeholder="economy, politics, religion, recent affair etc"> </textarea>
 			</div>
