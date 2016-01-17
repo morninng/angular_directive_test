@@ -42,6 +42,11 @@ angular.module('directiveTestApp')
       mixidea_event.set("lang_skil", $scope.exp_lang_skil);
       mixidea_event.set("deb_skill", $scope.exp_deb_skill);
       mixidea_event.set("prerequisit", $scope.prerequisit);
+      var currentUser = Parse.User.current();
+      var currentuser_ACL = new Parse.ACL();
+      currentuser_ACL.setWriteAccess(currentUser, true);
+      currentuser_ACL.setPublicReadAccess(true);
+      mixidea_event.setACL(currentuser_ACL);
 
 
       var Game = Parse.Object.extend("Game");
@@ -59,7 +64,6 @@ angular.module('directiveTestApp')
 
       var Speech_Transcription = Parse.Object.extend("Speech_Transcription");
       var speech_transcription_obj = new Speech_Transcription();
-
 // hangout url should be applied when it is saved in the server side by using before save command
 // when tehere is no enough urls, error shoud be poped up.
 
@@ -69,7 +73,7 @@ angular.module('directiveTestApp')
           alert("succeeded to save event data");
         },
         error: function(obj, error){
-          alert("fail to save event data, please try again");
+          alert("fail to save event data \n" + error.message);
         }
       });
 

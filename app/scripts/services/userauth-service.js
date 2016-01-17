@@ -146,6 +146,7 @@ angular.module('directiveTestApp')
     user_ext.set("user_obj", currentUser );
     var user_ext_ACL = new Parse.ACL(currentUser);
     user_ext_ACL.setPublicReadAccess(true);
+    user_ext_ACL.setWriteAccess(currentUser, true);
     user_ext.setACL(user_ext_ACL);
 
     currentUser.set("fb_id", response.id );
