@@ -3,6 +3,13 @@
 <div id="create_event_container">
 	<h2>Create Event</h2>
 
+
+<div ng-switch="event_create_status">
+<span ng-switch-when="input" ng-controller="CreateEventInputCtrl">
+
+<div >
+
+	{{aaa}}
 	<form name="event_create_form" novalidate>
 		<div>
 			<p>select date of the event</p>
@@ -70,14 +77,14 @@
 		<div>
 			<p>motion</p>
 			<div>
-				<input class="event_motion_input" name="motion" ng-required="true" type="text" placeholder="motion can be decided later">
+				<input class="event_motion_input" ng-model="motion" name="motion" ng-required="true" type="text" placeholder="motion can be decided later">
 			</div>
 		</div>
 
 		<p>prerequisit</p>
 		<div>
 			<div>
-			<textarea placeholder="reading article, investigate"></textarea>
+			<textarea ng-model="prerequisit" placeholder="reading article, investigate"></textarea>
 			</div>
 		</div>
 
@@ -90,6 +97,47 @@
 		</div>
 
 	</form>
-</div>
 <br><br><br>
 
+</div>
+</span>
+<span ng-switch-when="confirm">
+<div ng-controller="CreateEventConfirmCtrl">
+
+	<p>date and time of event</p>
+		{{date_time | date:'yyyy-MM-dd HH:mm Z'}}<br>
+
+	<p>debate context</p>
+		{{context}}<br>
+
+	<p>style of debate</p>
+		{{deb_style}}<br>
+
+	<p>Expected language skill</p>
+		{{exp_lang_skil}}<br>
+
+
+	<p>Motionl</p>
+		{{motion}}<br>
+
+
+	<p>prerequisit</p>
+		{{prerequisit}}<br>
+
+		<input type="button" ng-click="click_cancel()" value = "cancel">
+		<input type="button" ng-click="click_confirm()" value = "send & save">
+</div>
+</span>
+
+<span ng-switch-when="own">
+ own
+</span>
+
+<span ng-switch-when="loading">
+ loading
+</span>
+
+</div>
+
+
+</div>

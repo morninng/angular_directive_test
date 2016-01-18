@@ -7,51 +7,101 @@
  * # CreateEventCtrl
  * Controller of the directiveTestApp
  */
+ 
 angular.module('directiveTestApp')
   .controller('CreateEventCtrl', function ($scope, $uibModalInstance) {
 
   	console.log("CreateEventCtrl");
 
+    $scope.event_create_status = "input";
+    $scope.event_date = null;
+    $scope.event_time = null;
+    $scope.context = null;
+    $scope.deb_style = null;
+    $scope.exp_deb_skill = null;
+    $scope.exp_lang_skil = null;
+    $scope.event_time = null;
+    $scope.date_time = null;
+    $scope.motion = null;
+    $scope.prerequisit = null;
+/*
+    $scope.$on('status_change', function(e,data){
+      $scope.event_create_status = data;
+    });
+*/
+  	$scope.click_cancel = function(){
+  		console.log("cancel button is clicked");
+      $uibModalInstance.close();
+		}
+
+  });
+
+
+
+angular.module('directiveTestApp')
+  .controller('CreateEventInputCtrl', function ($scope) {
+
+
     var current_date = new Date(); 
     $scope.minDate = current_date.setDate(current_date.getDate()-1);
     var init_time = new Date(2015,1,1,0,0);
     $scope.event_time = init_time;
-    $scope.show_time = false;
     $scope.context_maxchar = 10;
+    $scope.show_time = false;
 
-    $scope.time_changed = function(){
-      $scope.show_time = true;
-    }
+    $scope.click_create = function(){
 
-  	$scope.click_create = function(){
+      console.log("create button is clicked");
+      console.log($scope.$parent.event_create_status);
 
-      //validation of input context
       if(!$scope.event_date || 
         !$scope.context || 
         $scope.context.length > $scope.context_maxchar  || 
         !$scope.show_time){
         alert("input data error");
         return;
+
       }else{
-        
+        $scope.$parent.$parent.date_time = new Date();
+        $scope.$parent.$parent.date_time.setYear($scope.event_date.getFullYear());
+        $scope.$parent.$parent.date_time.setMonth($scope.event_date.getMonth());
+        $scope.$parent.$parent.date_time.setDate($scope.event_date.getDate());
+        $scope.$parent.$parent.date_time.setHours($scope.event_time.getHours());
+        $scope.$parent.$parent.date_time.setMinutes($scope.event_time.getMinutes());
+
+        $scope.$parent.$parent.event_date = $scope.event_date;
+        $scope.$parent.$parent.context = $scope.context;
+        $scope.$parent.$parent.deb_style = $scope.deb_style;
+        $scope.$parent.$parent.exp_deb_skill = $scope.exp_deb_skill;
+        $scope.$parent.$parent.exp_lang_skil = $scope.exp_lang_skil;
+        $scope.$parent.$parent.event_time = $scope.event_time;
+        $scope.$parent.$parent.motion = $scope.motion;
+        $scope.$parent.$parent.prerequisit = $scope.prerequisit;
+
+        $scope.$parent.$parent.event_create_status = "confirm";
+
+       // $scope.$emit('status_change', "confirm");
+        return;
       }
+    }
+    $scope.time_changed = function(){
+      $scope.show_time = true;
+    }
+    
+});
 
 
+angular.module('directiveTestApp')
+  .controller('CreateEventConfirmCtrl', function ($scope) {
 
+    console.log("CreateEventConfirmCtrl");
 
-  		console.log("create button is clicked");
-      var date_time = new Date();
-      date_time.setYear($scope.event_date.getFullYear());
-      date_time.setMonth($scope.event_date.getMonth());
-      date_time.setDate($scope.event_date.getDate());
-      date_time.setHours($scope.event_time.getHours());
-      date_time.setMinutes($scope.event_time.getMinutes());
-      console.log(date_time);
-
+    $scope.click_confirm = function(){
+      console.log("sss");
 
       var Event = Parse.Object.extend("Event");
       var mixidea_event = new Event();
-      mixidea_event.set("date_time", date_time);
+      mixidea_event.set("date_time", $scope.date_time);
       mixidea_event.set("deb_style", $scope.deb_style);
       mixidea_event.set("context", $scope.context);
       mixidea_event.set("deb_skill", $scope.exp_deb_skill);
@@ -80,8 +130,6 @@ angular.module('directiveTestApp')
 
       var Speech_Transcription = Parse.Object.extend("Speech_Transcription");
       var speech_transcription_obj = new Speech_Transcription();
-// hangout url should be applied when it is saved in the server side by using before save command
-// when tehere is no enough urls, error shoud be poped up.
 
       mixidea_event.set("game", mixidea_game);
       mixidea_event.save(null, {
@@ -93,11 +141,6 @@ angular.module('directiveTestApp')
         }
       });
 
-		}
+    }
 
-  	$scope.click_cancel = function(){
-  		console.log("cancel button is clicked");
-      $uibModalInstance.close();
-		}
-
-  });
+});
