@@ -18,7 +18,10 @@
 
 			<ul class="event_list" ng-repeat="event in event_list">
 				<li>
-					<div>{{event.date_time | date:'yyyy/MMM/d - h:mm a Z'}}</div>
+					<div>
+						<p><a href="#event_context/{{event.id}}">{{event.date_time | date:'yyyy/MMM/d - h:mm a Z'}}</a></p>
+						style: {{event.deb_style}} <br>
+					</div>
 				</li>
 			</ul>
 

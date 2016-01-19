@@ -47,6 +47,7 @@ angular.module('directiveTestApp')
           $timeout(function() {
             for (var i = 0; i < results.length; i++) {
               var event_obj = new Object();
+              event_obj.id = results[i].id;
               event_obj.date_time = results[i].get("date_time");
               event_obj.lang_skill = results[i].get("lang_skill");
               event_obj.deb_skill = results[i].get("deb_skill");
