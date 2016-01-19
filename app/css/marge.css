@@ -227,4 +227,9 @@
   color: red;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\000031}}
+.event_list {
+  list-style: none;
+}
+
 /*# sourceMappingURL=marge.css.map */

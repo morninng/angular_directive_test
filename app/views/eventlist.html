@@ -13,9 +13,15 @@
 			 calendar view. list view
 			<p>time range</p>
 			 from XX oclock to YY oclock
-			 <>
 		</div>
 		<div class="col-xs-12 col-sm-9 col-md-5 col-lg-7" style="overflow:visible">
+
+			<ul class="event_list" ng-repeat="event in event_list">
+				<li>
+					<div>{{event.date_time | date:'yyyy/MMM/d - h:mm a Z'}}</div>
+				</li>
+			</ul>
+
 			<p>aaa aaaa aaaaa aaaaa aaaaaa aaa aaaa aaaaa aaaaa aaaaaa aaa aaaa aaaaa aaaaa aaaaaa aaa aaaa aaaaa aaaaa aaaaaa aaa aaaa aaaaa aaaaa aaaaaa </p>
 		</div>
 
