@@ -53,6 +53,8 @@ angular.module('directiveTestApp')
               event_obj.deb_skill = results[i].get("deb_skill");
               event_obj.deb_style = results[i].get("deb_style");
               event_obj.prerequisit = results[i].get("prerequisit");
+              event_obj.context = results[i].get("context");
+              event_obj.motion = results[i].get("motion");
               var game_obj = results[i].get("game");
               if(game_obj){
                 event_obj.game_id = game_obj.id;

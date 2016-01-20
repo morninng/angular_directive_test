@@ -46,7 +46,8 @@ angular.module('directiveTestApp')
     $scope.minDate = current_date.setDate(current_date.getDate()-1);
     var init_time = new Date(2015,1,1,0,0);
     $scope.event_time = init_time;
-    $scope.context_maxchar = 10;
+    $scope.context_maxchar = 350;
+    $scope.context_minchar = 20;
     $scope.show_time = false;
 
     $scope.click_create = function(){
@@ -57,6 +58,7 @@ angular.module('directiveTestApp')
       if(!$scope.event_date || 
         !$scope.context || 
         $scope.context.length > $scope.context_maxchar  || 
+        $scope.context.length < $scope.context_minchar ||
         !$scope.show_time){
         alert("input data error");
         return;
@@ -107,7 +109,9 @@ angular.module('directiveTestApp')
       mixidea_event.set("deb_skill", $scope.exp_deb_skill);
       mixidea_event.set("lang_skil", $scope.exp_lang_skil);
       mixidea_event.set("deb_skill", $scope.exp_deb_skill);
+      mixidea_event.set("motion", $scope.motion);
       mixidea_event.set("prerequisit", $scope.prerequisit);
+
       var currentUser = Parse.User.current();
       var currentuser_ACL = new Parse.ACL();
       currentuser_ACL.setWriteAccess(currentUser, true);

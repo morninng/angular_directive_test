@@ -20,7 +20,12 @@
 				<li>
 					<div>
 						<p><a href="#event_context/{{event.id}}">{{event.date_time | date:'yyyy/MMM/d - h:mm a Z'}}</a></p>
-						style: {{event.deb_style}} <br>
+						<span class="event_item">style</span>: {{event.deb_style}} <br>
+						<span class="event_item">topic</span>: {{event.context}}
+						<span ng-show="event.motion">
+							<br>
+							<span class="event_item">motion</span>: {{event.motion}}
+						<span>
 					</div>
 				</li>
 			</ul>

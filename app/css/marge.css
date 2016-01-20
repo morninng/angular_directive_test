@@ -235,5 +235,9 @@
 .event_list div {
   border-bottom: 1px solid #84b2e0;
 }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\000037}}
+.event_list .event_item {
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=marge.css.map */
