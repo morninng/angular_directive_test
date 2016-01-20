@@ -35,8 +35,8 @@
 		<div>
 			<p>Abstract context what you want to discuss</p>
 			<span class="req_message" ng-show="event_create_form.context.$error.required">mandatory field</span>
-			<span class="req_message" ng-show="event_create_form.context.$error.maxlength">should be less than {{context_maxchar}} words</span>
-			<span class="req_message" ng-show="event_create_form.context.$error.minlength">should be greater than than {{context_minchar}} words</span>
+			<span class="req_message" ng-show="event_create_form.context.$error.maxlength">should be less than {{context_maxchar}} characters</span>
+			<span class="req_message" ng-show="event_create_form.context.$error.minlength">should be greater than than {{context_minchar}} characters</span>
 			<div>
 			<textarea name="context" ng-model="context" ng-minlength="20" ng-maxlength="350" ng-required="true" rows=3 placeholder="economy, politics, religion, recent affair etc"> </textarea>
 			</div>
