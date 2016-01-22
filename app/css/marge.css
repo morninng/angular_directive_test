@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_participant_table\.scss}line{font-family:\000031}}
 #participant_area {
   background-color: green;
@@ -227,17 +228,90 @@
   color: red;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\000031}}
-.event_list {
-  list-style: none;
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\000036}}
+#event_list_container #event_list_left .left_select_box > div {
+  border: none !important;
+  padding: 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\000034}}
-.event_list div {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000312}}
+#event_list_container #event_list_left .pre_exist {
+  margin-top: 0px;
+  padding-top: 0px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000317}}
+#event_list_container #event_list_left p {
+  text-decoration: underline;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000322}}
+#event_list_container #event_list_left .event_list_item {
+  font-size: large;
+  font-weight: bold;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000330}}
+#event_list_container #event_list_center ul {
+  list-style: none;
+  padding-left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000334}}
+#event_list_container #event_list_center div {
   border-bottom: 1px solid #84b2e0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\000037}}
-.event_list .event_item {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000337}}
+#event_list_container #event_list_center p {
+  margin-bottom: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000340}}
+#event_list_container #event_list_center .event_item {
   font-weight: bold;
+}
+
+/* アニメーション定義 */
+/* アニメーション対象要素の基本的なスタイル */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_animate\.scss}line{font-family:\000033}}
+.animate-show-hide {
+  /*
+  padding:10px;
+  border:1px solid black;
+  background:white;
+  */
+  background: #F0F8FF;
+}
+
+/* 表示・非表示時のアニメーションを定義 */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_animate\.scss}line{font-family:\0000312}}
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  /*
+  -webkit-transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+  */
+  /*下記の定義に注目(詳細は後述)*/
+  /*
+  display:block!important;
+  */
+  -webkit-transition: 1s ease-in-out opacity;
+  transition: 1s ease-in-out opacity;
+  opacity: 1;
+}
+
+/* ng-hide適用(=非表示)の終点となるスタイル */
+/* また、ng-hide-removeに移行する際の始点のスタイルでもある */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_animate\.scss}line{font-family:\0000334}}
+.animate-show-hide.ng-hide-add.ng-hide-add-active,
+.animate-show-hide.ng-hide-remove {
+  opacity: 0;
+}
+
+/* ng-hide削除(=表示)して到達するスタイル */
+/* また、ng-hide-addに移行する際の始点のスタイルでもある */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_animate\.scss}line{font-family:\0000340}}
+.animate-show-hide.ng-hide-remove.ng-hide-remove-active,
+.animate-show-hide.ng-hide-add {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=marge.css.map */

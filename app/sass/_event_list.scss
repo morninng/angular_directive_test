@@ -1,11 +1,45 @@
-.event_list {
-	list-style:none;
 
-	div{
-		border-bottom:1px solid #84b2e0;
+#event_list_container{
+
+	#event_list_left{
+		.left_select_box{
+			>div {
+				border: none !important;
+				padding: 3px;
+				
+			}	
+		}
+		.pre_exist{
+			margin-top:0px;
+			padding-top:0px !important;
+		}
+
+		p{
+			text-decoration: underline;
+			font-weight: bold;
+			margin-bottom:3px;
+		}
+		.event_list_item{
+			font-size: large;
+			font-weight: bold;
+		}
 	}
-	.event_item{
-		font-weight: bold;
+
+
+	#event_list_center {
+		ul{
+			list-style:none;
+			padding-left: 0;
+		}
+		div{
+			border-bottom:1px solid #84b2e0;
+		}
+		p{
+			margin-bottom:5px;
+		}
+		.event_item{
+			font-weight: bold;
+		}
 	}
 
 }

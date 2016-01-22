@@ -1,41 +1,88 @@
 
-<div class="container">
-	<div class="row">
-		<input class="pull-right" type="button" value ="create event" ng-click="open_create_event()" />
+<div id="event_list_container">
+	<div class="container">
+		<div class="row">
+			<input class="pull-right" type="button" value ="create event" ng-click="open_create_event()" />
+		</div>
+		<br>
 	</div>
-	<br>
-</div>
 
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-xs-12 col-sm-3 col-md-3 col-lg-2" style="overflow:visible">
-			<p>view type</p>
-			 calendar view. list view
-			<p>time range</p>
-			 from XX oclock to YY oclock
+	<div class="container-fluid">
+		<div class="row">
+			<div id="event_list_left" class="col-xs-12 col-sm-3 col-md-3 col-lg-2" style="overflow:visible">
+				<div class="left_select_box">
+					<span class="event_list_item">view type</span><br>
+					 <a>calendar view.</a><br>
+					 <a>list view</a>
+				</div>
+				<div class="left_select_box">
+					<span class="event_list_item">Filter</span>
+					<div ng-mouseover="date_range_in()" ng-mouseleave="data_range_out()">
+						<p >date range</p>
+						<div  class="animate-show-hide" ng-show="date_range_show">
+					 		From: <input type="text" ng-model="date_from" uib-datepicker-popup="{{format}}"><br>
+					 		To: <input type="text" ng-model="date_to" uib-datepicker-popup="{{format}}">
+					 	</div>
+					 </div>
+					 <div class="pre_exist" ng-hide="date_range_show">from {{date_from | date:'yyyy-MMM'}} to {{date_to | date:'yyyy-MMM'}}</div>
+
+
+
+
+					 <div ng-mouseover="time_range_in()" ng-mouseleave="time_range_out()">
+					 	<p> time range</p>
+					 	<div  class="animate-show-hide" ng-show="time_range_show">
+					 		From:  <uib-timepicker ng-model="time_from" minute-step="15" show-meridian="ismeridian"></uib-timepicker><br>
+					 		To:  <uib-timepicker ng-model="time_to" minute-step="15" show-meridian="ismeridian"></uib-timepicker>
+					 	</div>
+					 </div>
+					 <div class="pre_exist" ng-hide="time_range_show">from {{time_from | date:'HH:mm'}} to {{time_to | date:'HH:mm'}}</div>
+
+					<p>week day</p>
+						<input type="checkbox" ng-model="weekday_Sun">Sunday<br>
+						<input type="checkbox" ng-model="weekday_Mon">Monday<br>
+						<input type="checkbox" ng-model="weekday_Tud">Tuesday<br>
+						<input type="checkbox" ng-model="weekday_Wed">Wednesday<br>
+						<input type="checkbox" ng-model="weekday_Thu">Thursday<br>
+						<input type="checkbox" ng-model="weekday_Fri">Friday<br>
+						<input type="checkbox" ng-model="weekday_Sat">Saturday<br>
+					<p>debate style</p>
+						<input type="checkbox" ng-model="style_NA">NA<br>
+						<input type="checkbox" ng-model="style_Asian">Asian<br>
+						<input type="checkbox" ng-model="style_BP">BP<br>
+					<p>debate skill</p>
+						<input type="checkbox" ng-model="deb_skill_vhigh">Very High<br>
+						<input type="checkbox" ng-model="deb_skill_high">High<br>
+						<input type="checkbox" ng-model="deb_skill_med">Medium<br>
+						<input type="checkbox" ng-model="deb_skill_beg">Beginner<br>
+					<p>language skill</p>
+						<input type="checkbox" ng-model="lang_main">Native<br>
+						<input type="checkbox" ng-model="lang_ESL">ESL<br>
+						<input type="checkbox" ng-model="lang_EFL_Low">EFL high<br>
+						<input type="checkbox" ng-model="lang_EFL_Low">EFL low<br>
+				</div>
+			</div>
+			<div id="event_list_center" class="col-xs-12 col-sm-9 col-md-5 col-lg-7" style="overflow:visible">
+
+				<ul ng-repeat="event in event_list">
+					<li>
+						<div>
+							<p><a href="#event_context/{{event.id}}">{{event.date_time | date:'yyyy/MMM/d - h:mm a Z'}}</a></p>
+							<span class="event_item">style</span>: {{event.deb_style}} <br>
+							<span class="event_item">topic</span>: {{event.context}}
+							<span ng-show="event.motion">
+								<br>
+								<span class="event_item">motion</span>: {{event.motion}}
+							<span>
+						</div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="hidden-xs hidden-sm col-md-4 col-lg-3" style="overflow:visible">
+				ad space ad space ad space ad space ad space ad space ad space ad space ad space ad space ad space ad space ad space ad space 
+			</div>
+
 		</div>
-		<div class="col-xs-12 col-sm-9 col-md-5 col-lg-7" style="overflow:visible">
-
-			<ul class="event_list" ng-repeat="event in event_list">
-				<li>
-					<div>
-						<p><a href="#event_context/{{event.id}}">{{event.date_time | date:'yyyy/MMM/d - h:mm a Z'}}</a></p>
-						<span class="event_item">style</span>: {{event.deb_style}} <br>
-						<span class="event_item">topic</span>: {{event.context}}
-						<span ng-show="event.motion">
-							<br>
-							<span class="event_item">motion</span>: {{event.motion}}
-						<span>
-					</div>
-				</li>
-			</ul>
-
-			<p>aaa aaaa aaaaa aaaaa aaaaaa aaa aaaa aaaaa aaaaa aaaaaa aaa aaaa aaaaa aaaaa aaaaaa aaa aaaa aaaaa aaaaa aaaaaa aaa aaaa aaaaa aaaaa aaaaaa </p>
-		</div>
-
-		<div class="hidden-xs hidden-sm col-md-4 col-lg-3" style="overflow:visible">
-			ad space ad space ad space ad space ad space ad space ad space ad space ad space ad space ad space ad space ad space ad space 
-		</div>
-
 	</div>
 </div>
