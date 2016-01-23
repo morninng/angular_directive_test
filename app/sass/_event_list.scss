@@ -48,5 +48,10 @@
 			font-weight: bold;
 		}
 	}
+	.only_pc_menu{
+		@media(max-width: 768px){
+			display:none;
+		}
+	}
 
 }

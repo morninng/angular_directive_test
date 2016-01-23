@@ -275,6 +275,12 @@
 #event_list_container #event_list_center .event_item {
   font-weight: bold;
 }
+@media (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000351}}
+  #event_list_container .only_pc_menu {
+    display: none;
+  }
+}
 
 /* アニメーション定義 */
 /* アニメーション対象要素の基本的なスタイル */
