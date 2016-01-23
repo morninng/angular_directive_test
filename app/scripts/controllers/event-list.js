@@ -8,7 +8,7 @@
  * Controller of the directiveTestApp
  */
 angular.module('directiveTestApp')
-  .controller('EventListCtrl', function ($scope, $routeParams, $timeout) {
+  .controller('EventListCtrl', function ($scope, $routeParams, $timeout, GetStringService) {
 
 
 	var event_id = $routeParams.eventId;
@@ -20,20 +20,15 @@ angular.module('directiveTestApp')
 	event_query.get(event_id, {
 		success: function(obj) {
 
-
         	$timeout(function() {
 				$scope.context  = obj.get("context");
 				$scope.date_time  = obj.get("date_time");
-				$scope.deb_skill  = obj.get("deb_skill");
+				$scope.deb_skill  = GetStringService.getDebSkill(obj.get("deb_skill"));
 				$scope.deb_style  = obj.get("deb_style");
-				$scope.lang_skill  = obj.get("lang_skill");
+				$scope.lang_skill  = GetStringService.getLangSkill(obj.get("lang_skil"));
 				$scope.motion  = obj.get("motion");
 			});
-
-
 			var game_obj = obj.get("game");
-
-
 
 		},
 		error: function(obj, error) {
