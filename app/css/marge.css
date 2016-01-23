@@ -249,20 +249,29 @@
   font-size: large;
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000330}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000326}}
+#event_list_container #event_list_left .active_weekday_list {
+  list-style: none;
+  padding-left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000329}}
+#event_list_container #event_list_left .active_weekday_list li {
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000337}}
 #event_list_container #event_list_center ul {
   list-style: none;
   padding-left: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000334}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000341}}
 #event_list_container #event_list_center div {
   border-bottom: 1px solid #84b2e0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000344}}
 #event_list_container #event_list_center p {
   margin-bottom: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000340}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_list\.scss}line{font-family:\0000347}}
 #event_list_container #event_list_center .event_item {
   font-weight: bold;
 }
