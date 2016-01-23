@@ -27,8 +27,6 @@
 					 <div class="pre_exist" ng-hide="date_range_show">from {{date_from | date:'yyyy-MMM-d'}} to {{date_to | date:'yyyy-MMM-d'}}</div>
 
 
-
-
 					 <div ng-mouseover="time_range_in()" ng-mouseleave="time_range_out()">
 					 	<p> time range</p>
 					 	<div  class="animate-show-hide" ng-show="time_range_show">
@@ -91,17 +89,16 @@
 				</div>
 			</div>
 			<div id="event_list_center" class="col-xs-12 col-sm-9 col-md-5 col-lg-7" style="overflow:visible">
-
 				<ul ng-repeat="event in event_list">
 					<li>
 						<div>
-							<p><a href="#event_context/{{event.id}}">{{event.date_time | date:'yyyy/MMM/d - h:mm a Z'}}</a></p>
+							<p><a href="#event-context/{{event.id}}">{{event.date_time | date:'yyyy/MMM/d - h:mm a Z'}}</a></p>
 							<span class="event_item">style</span>: {{event.deb_style}} <br>
 							<span class="event_item">topic</span>: {{event.context}}
 							<span ng-show="event.motion">
 								<br>
 								<span class="event_item">motion</span>: {{event.motion}}
-							<span>
+							</span>
 						</div>
 					</li>
 				</ul>
