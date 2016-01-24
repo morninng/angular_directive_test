@@ -94,11 +94,11 @@
 						<div>
 							<p><a href="#event-context/{{event.id}}">{{event.date_time | date:'yyyy/MMM/d - h:mm a Z'}}</a></p>
 							<span class="event_item">style</span>: {{event.deb_style}} <br>
-							<span class="event_item">topic</span>: {{event.context}}
+							<span class="event_item">topic</span>: {{event.context}}<br>
 							<span ng-show="event.motion">
-								<br>
-								<span class="event_item">motion</span>: {{event.motion}}
+								<span class="event_item">motion</span>: {{event.motion}} <br>
 							</span>
+							<span class="event_item">current participant </span>: Debater {{event.debater_num}} / Audience {{event.audience_num}} / Audience or debater {{event.aud_debater_num}} / remained sheet {{event.remained}} 
 						</div>
 					</li>
 				</ul>

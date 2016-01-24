@@ -55,6 +55,20 @@ angular.module('directiveTestApp')
               event_obj.prerequisit = results[i].get("prerequisit");
               event_obj.context = results[i].get("context");
               event_obj.motion = results[i].get("motion");
+              var participants_category = results[i].get("participants_category");
+              event_obj.audience_num = 0;
+              event_obj.debater_num = 0;
+              event_obj.aud_debater_num = 0;
+              if(participants_category){
+                var audience_array = participants_category.Audience;
+                event_obj.audience_num = audience_array.length;
+                var debater_array = participants_category.Debater;
+                event_obj.debater_num = debater_array.length;
+                var aud_debater_array = participants_category.Aud_or_Debater;
+                event_obj.aud_debater_num = aud_debater_array.length;
+                event_obj.remained = 10 - event_obj.aud_debater_num - event_obj.debater_num - event_obj.audience_num;
+              }
+
               var game_obj = results[i].get("game");
               if(game_obj){
                 event_obj.game_id = game_obj.id;
