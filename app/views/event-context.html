@@ -1,0 +1,22 @@
+
+
+
+
+{{date_time | date:'yyyy-MMM-dd  HH:mm  Z' }}<br>
+
+
+<div>
+	<div>
+		<input type="radio" ng-model="participant_category" value="Audience" >Audience 
+		<input type="radio" ng-model="participant_category" value="Debater" >Debater
+		<input type="radio" ng-model="participant_category" value="Aud_or_Debater" > Audience or Debater
+	</div>
+	<input type="button" value = "join" ng-click="join_event()">
+</div>
+
+{{context}}<br>
+{{deb_skill}}<br>
+{{deb_style}}<br>
+{{lang_skill}}<br>
+{{motion}}<br>
+

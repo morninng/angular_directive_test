@@ -26,9 +26,9 @@ angular
         controllerAs: 'eventlist'
       })
       .when('/event-context/:eventId', {
-        templateUrl: 'views/event-list.html',
-        controller: 'EventListCtrl',
-        controllerAs: 'eventList'
+        templateUrl: 'views/event-context.html',
+        controller: 'EventContextCtrl',
+        controllerAs: 'eventContext'
       })
       .otherwise({
         redirectTo: '/'

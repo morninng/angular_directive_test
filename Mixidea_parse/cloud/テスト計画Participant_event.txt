@@ -1,0 +1,62 @@
+http://webdemo.dac.co.jp/mixidea/test_file/%E3%83%86%E3%82%B9%E3%83%88HTML_participate_event.html
+　→テストサイト
+　
+
+(１)非ログイン状態で参加
+　→期待動作：you need to login to join event　というアラートが出ること。
+　
+　→実施操作
+　　　ログアウトして参加ボタンをおす。
+ →結果OK
+　
+（２）存在しないEventIDへ参加
+　→期待動作：event might be deletedというアラートが出ること。
+　　　→実施操作
+　　　eventid="aaa"として参加
+ →結果OK
+　
+　
+（３）GameオブジェクトへのリンクがないEventへの参加　
+　　→"event data is corrupted"というアラートが出ること
+　　　　→実施操作
+　　　　GameObjectをEventから消してから実施
+　 →結果OK
+　
+（４）既に参加している場合。
+　　→"you have already joined in this event."というアラートがでること
+ →結果OK
+
+（５）１０人以上の参加
+　　"maximum number of participants is 10, so you cannot join until someone cancel"というアラートがでること
+→実施操作
+　  （４）の操作をテストでスキップして、実行
+ →結果OK
+
+
+（６）各スタイルごとのロールでの参加可能人数をオーバー
+　　　→aUDIENCEで超過の場合
+　　　　　"Audience role reached maximum because someone has joined before you"
+　　　→Debaterで超過の場合
+　　　　　"Debater role reached maximum because someone has joined before you"
+　　　結果BP　Okay
+　　　　　
+　　　　　
+（７）カテゴリに不正な文字列が存在したとき
+　　→"unregistered category"と表示
+（８）カテゴリが存在しないとき
+　　→"unregistered category"と表示
+　　
+　　
+　　
+■正常動作確認事項
+
+　参加ユーザのポインタが、GameObjectに配列として格納されていること
+　
+　参加カテゴリに、参加カテゴリに大して配列でUserIDが格納されること。
+　
+
+
+　　　	
+　　　
+　　　
+　　　（８）カテゴリが存在しないとき

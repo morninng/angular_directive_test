@@ -23,6 +23,12 @@ function set_hangoutobj_array_used(hangout_obj_array){
 Parse.Cloud.beforeSave("Event", function(request, response) {
 	console.log("before save");
 
+	if(!request.object.isNew()){
+		console.log("not new object before save event");
+		response.success();
+		return;
+	}
+
 	var HangoutId = Parse.Object.extend("HangoutIDList")
 	var hangout_query = new Parse.Query(HangoutId);
 	hangout_query.equalTo("used", false);
@@ -43,10 +49,17 @@ Parse.Cloud.beforeSave("Event", function(request, response) {
 });
 
 Parse.Cloud.afterSave("Event", function(request) {
-  
+
 	console.log("event after save");
+
+
 	var event_obj = request.object;
 	var game_obj = event_obj.get("game");
+	var hangout_array = game_obj.get("hangoutid")
+	if(hangout_array){
+		console.log("hangout id already set");
+		return;
+	}
 
 	var HangoutId = Parse.Object.extend("HangoutIDList")
 	var hangout_query = new Parse.Query(HangoutId);

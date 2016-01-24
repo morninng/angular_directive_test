@@ -1,5 +1,6 @@
 
 require('cloud/create_event.js');
+require('cloud/participate_event.js');
 
 // Use Parse.Cloud.define to define as many cloud functions as you want.
 // For example:

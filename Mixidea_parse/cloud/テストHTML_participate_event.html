@@ -1,0 +1,211 @@
+
+<html>
+ <head>
+   <meta charset="utf-8">
+
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+
+
+	<script>
+      var parse_app_id = "Uk00xv536Y7jwNUtwXKUwKpo3zU16KKmVnUPaiyb";
+      var parse_js_key = "85EGgk7ruUdSiORTqeexhnObs49i0pnMDwgqwUBA";
+	  Parse.initialize(parse_app_id, parse_js_key);
+  </script>
+
+ </head>
+
+<body>
+
+
+<input type="button" onclick="test1()" value = "test1">
+<input type="button" onclick="test2()" value = "test2">
+<input type="button" onclick="test3()" value = "test3">
+<input type="button" onclick="test5_BP_Audience()" value = "test5_BP_Audience">
+<input type="button" onclick="test5_BP_Debater()" value = "test5_BP_Debater">
+<input type="button" onclick="test5_NA_Audience()" value = "test5_NA_Audience">
+<input type="button" onclick="test5_NA_Debater()" value = "test5_NA_Debater">
+<input type="button" onclick="test5_Asian_Audience()" value = "test5_Asian_Audience">
+<input type="button" onclick="test5_Asian_Debater()" value = "test5_Asian_Debater">
+<input type="button" onclick="test7()" value = "test7">
+<input type="button" onclick="test8()" value = "test8">
+
+<script>
+function test1(){
+	var event_id = "wOyB4onEf2";
+	var participant_category = "Aud_or_Debater";
+
+	Parse.Cloud.run('JoinEvent', { id: event_id, category: participant_category},{
+		success: function(obj) {
+			console.log(obj);
+		},
+		error: function(error){
+			alert(error.message);
+		}
+	});
+}
+
+function test2(){
+	var event_id = "AAAA";
+	var participant_category = "Aud_or_Debater";
+
+	Parse.Cloud.run('JoinEvent', { id: event_id, category: participant_category},{
+		success: function(obj) {
+			console.log(obj);
+		},
+		error: function(error){
+			alert(error.message);
+		}
+	});
+
+}
+
+function test3(){
+	var event_id = "cgoO20n8FZ";
+	var participant_category = "Aud_or_Debater";
+
+	Parse.Cloud.run('JoinEvent', { id: event_id, category: participant_category},{
+		success: function(obj) {
+			console.log(obj);
+		},
+		error: function(error){
+			alert(error.message);
+		}
+	});
+}
+
+function test5_BP_Audience(){
+	var event_id = "xJ7olMAso1";
+	var participant_category = "Audience";
+
+	Parse.Cloud.run('JoinEvent', { id: event_id, category: participant_category},{
+		success: function(obj) {
+			console.log(obj);
+		},
+		error: function(error){
+			alert(error.message);
+		}
+	});
+}
+
+function test5_BP_Debater(){
+	var event_id = "xJ7olMAso1";
+	var participant_category = "Debater";
+
+	Parse.Cloud.run('JoinEvent', { id: event_id, category: participant_category},{
+		success: function(obj) {
+			console.log(obj);
+		},
+		error: function(error){
+			alert(error.message);
+		}
+	});
+}
+
+
+function test5_NA_Audience(){
+	var event_id = "YICws1jkn4";
+	var participant_category = "Audience";
+
+	Parse.Cloud.run('JoinEvent', { id: event_id, category: participant_category},{
+		success: function(obj) {
+			console.log(obj);
+		},
+		error: function(error){
+			alert(error.message);
+		}
+	});
+}
+
+function test5_NA_Debater(){
+	var event_id = "YICws1jkn4";
+	var participant_category = "Debater";
+
+	Parse.Cloud.run('JoinEvent', { id: event_id, category: participant_category},{
+		success: function(obj) {
+			console.log(obj);
+		},
+		error: function(error){
+			alert(error.message);
+		}
+	});
+}
+
+
+function test5_Asian_Audience(){
+	var event_id = "dvZOGDkt7V";
+	var participant_category = "Audience";
+
+	Parse.Cloud.run('JoinEvent', { id: event_id, category: participant_category},{
+		success: function(obj) {
+			console.log(obj);
+		},
+		error: function(error){
+			alert(error.message);
+		}
+	});
+}
+
+function test5_Asian_Debater(){
+	var event_id = "dvZOGDkt7V";
+	var participant_category = "Debater";
+
+	Parse.Cloud.run('JoinEvent', { id: event_id, category: participant_category},{
+		success: function(obj) {
+			console.log(obj);
+		},
+		error: function(error){
+			alert(error.message);
+		}
+	});
+}
+
+
+function test5_Asian_Debater(){
+	var event_id = "dvZOGDkt7V";
+	var participant_category = "Debater";
+
+	Parse.Cloud.run('JoinEvent', { id: event_id, category: participant_category},{
+		success: function(obj) {
+			console.log(obj);
+		},
+		error: function(error){
+			alert(error.message);
+		}
+	});
+}
+
+
+
+
+
+function test7(){
+	var event_id = "dvZOGDkt7V";
+	var participant_category = "ssss";
+
+	Parse.Cloud.run('JoinEvent', { id: event_id, category: participant_category},{
+		success: function(obj) {
+			console.log(obj);
+		},
+		error: function(error){
+			alert(error.message);
+		}
+	});
+}
+
+
+
+function test8(){
+	var event_id = "dvZOGDkt7V";
+
+	Parse.Cloud.run('JoinEvent', { id: event_id},{
+		success: function(obj) {
+			console.log(obj);
+		},
+		error: function(error){
+			alert(error.message);
+		}
+	});
+}
+
+
+</script>
