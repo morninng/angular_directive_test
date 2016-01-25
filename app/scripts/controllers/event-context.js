@@ -25,7 +25,8 @@ angular.module('directiveTestApp')
     $scope.audience_userobj_array = new Array();
     $scope.debater_userobj_array = new Array();
     $scope.deb_or_aud_userobj_array = new Array();
-
+    $scope.motion = null;
+    
     var currentUser = Parse.User.current();
 
 	var EventObj = Parse.Object.extend("Event");

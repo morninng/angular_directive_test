@@ -9,3 +9,5 @@
 /app/styles/*.map
 /Mixidea_parse/.parse.*
 *~
+/app/scripts/app.sublime-project
+/app/scripts/app.sublime-workspace

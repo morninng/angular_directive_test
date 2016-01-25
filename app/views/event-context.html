@@ -1,22 +1,137 @@
 
 
+<div id="event_context">
 
 
-{{date_time | date:'yyyy-MMM-dd  HH:mm  Z' }}<br>
-
-
-<div>
 	<div>
-		<input type="radio" ng-model="participant_category" value="Audience" >Audience 
-		<input type="radio" ng-model="participant_category" value="Debater" >Debater
-		<input type="radio" ng-model="participant_category" value="Aud_or_Debater" > Audience or Debater
+		<span class="event_item_title"> date and time</span>
+		<div align="centeer" class="date_time_string">
+			{{date_time | date:'yyyy-MMM-dd  HH:mm  Z' }}
+		</div>
 	</div>
-	<input type="button" value = "join" ng-click="join_event()">
+
+
+
+
+	<div id="join_box">
+		<div class="join_box_radio">
+			<div class="radio">
+				<label>
+					<input type="radio" ng-model="participant_category" value="Audience" >Audience 
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" ng-model="participant_category" value="Debater" >Debater
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" ng-model="participant_category" value="Aud_or_Debater" > Audience or Debater
+				</label>
+			</div>
+		</div>
+		<div class="join_box_button">
+			<div>
+				<input type="button" value = "join" ng-click="join_event()">
+			</div>
+		</div>
+	</div>
+
+
+	<div>
+		<span class="event_item_title">Context to be discussed in this round</span>
+		<div>
+		{{context}}
+		</div>
+	</div>
+	<div id="motion">
+		<div ng-show="motion">
+			{{motion}}<br>
+		</div>
+		<div ng-show="!motion">
+			Anyone can suggest motion as it is not yet decided
+			<input type="text" placeholer"input motion here">
+			<input type="button" value="send" ng-click="suggest_motion()">
+		</div>
+	</div>
+
+
+	<div id="participant_table">
+		 <span class="event_item_title"> current participant </span>
+
+		 <p>Debater</p>
+		 	
+			<div class = "participant_list">
+				<div ng-repeat = "person in debater_userobj_array track by $index">
+					<div class="profile_container">
+						<div>
+							<img ng-src="{{person.pict_src}}">
+						</div>
+						<div class="profile_rightbox">
+							<p class="profile_name">{{person.first_name}} {{person.last_name}}</p>
+							<p class="profile_description">
+							{{person.comment}}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div align="center"  ng-hide="debater_userobj_array.length">
+			 	no one had applied yet
+			</div>
+		 
+		 <p>Audience</p>
+		 
+			<div class = "participant_list">
+				<div ng-repeat = "person in audience_userobj_array track by $index">
+					<div class="profile_container">
+						<div>
+							<img ng-src="{{person.pict_src}}">
+						</div>
+						<div class="profile_rightbox">
+							<p class="profile_name">{{person.first_name}} {{person.last_name}}</p>
+							<p class="profile_description">
+							{{person.comment}}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div align="center" ng-hide="audience_userobj_array.length">
+			 	no one had applied yet
+			</div>
+
+		 <p>Either Debater or Audience </p>
+
+
+			<div class = "participant_list">
+				<div ng-repeat = "person in deb_or_aud_userobj_array track by $index">
+					<div class="profile_container">
+						<div>
+							<img ng-src="{{person.pict_src}}">
+						</div>
+						<div class="profile_rightbox">
+							<p class="profile_name">{{person.first_name}} {{person.last_name}}</p>
+							<p class="profile_description">
+							{{person.comment}}
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div align="center"  ng-hide="deb_or_aud_userobj_array.length">
+			 	no one had applied yet
+			</div>
+
+	</div>
+
+
+
+	<br>
+	{{deb_skill}}<br>
+	{{deb_style}}<br>
+	{{lang_skill}}<br>
+	
+
 </div>
-
-{{context}}<br>
-{{deb_skill}}<br>
-{{deb_style}}<br>
-{{lang_skill}}<br>
-{{motion}}<br>
-
