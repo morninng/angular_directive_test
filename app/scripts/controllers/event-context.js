@@ -26,6 +26,7 @@ angular.module('directiveTestApp')
     $scope.debater_userobj_array = new Array();
     $scope.deb_or_aud_userobj_array = new Array();
     $scope.motion = null;
+    $scope.already_login = true;
     
     var currentUser = Parse.User.current();
 
@@ -118,9 +119,9 @@ angular.module('directiveTestApp')
 			}
 		});
 
-
-
 	}
+
+
 
 
 

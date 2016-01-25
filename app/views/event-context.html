@@ -14,28 +14,37 @@
 
 
 	<div id="join_box">
-		<div class="join_box_radio">
-			<div class="radio">
-				<label>
-					<input type="radio" ng-model="participant_category" value="Audience" >Audience 
-				</label>
+		<div ng-hide="already_login">
+			<div class="join_box_radio">
+				<div class="radio">
+					<label>
+						<input type="radio" ng-model="participant_category" value="Audience" >Audience 
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" ng-model="participant_category" value="Debater" >Debater
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" ng-model="participant_category" value="Aud_or_Debater" > Audience or Debater
+					</label>
+				</div>
 			</div>
-			<div class="radio">
-				<label>
-					<input type="radio" ng-model="participant_category" value="Debater" >Debater
-				</label>
-			</div>
-			<div class="radio">
-				<label>
-					<input type="radio" ng-model="participant_category" value="Aud_or_Debater" > Audience or Debater
-				</label>
+			<div class="join_box_button">
+				<div>
+					<input type="button" value = "join" ng-click="join_event()">
+				</div>
 			</div>
 		</div>
-		<div class="join_box_button">
-			<div>
-				<input type="button" value = "join" ng-click="join_event()">
+		<div ng-show="already_login">
+			<div id = "event_cancel_box">
+				<div>
+					<input type="button" value = "cancel" ng-click="cancel_event()">
+				</div>
 			</div>
-		</div>
+		</div>>
 	</div>
 
 

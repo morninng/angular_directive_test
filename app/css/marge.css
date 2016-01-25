@@ -329,28 +329,33 @@
   opacity: 1;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\000035}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\000036}}
 #event_context #join_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  padding-top: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\000038}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000313}}
 #event_context #join_box .join_box_radio {
   background-color: #B0E0E6;
-  height: 90px;
+  height: 100px;
   padding-left: 5px;
   margin-left: 5px;
+  padding-top: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000315}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000321}}
 #event_context #join_box .join_box_button {
   background-color: #B0E0E6;
   padding-left: 10px;
   width: 70px;
-  height: 90px;
+  height: 100px;
   position: relative;
   display: table-cell;
   vertical-align: middle;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000325}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000331}}
 #event_context #join_box .join_box_button > div {
   background-color: #B0E0E6;
   position: absolute;
@@ -359,30 +364,50 @@
   margin: auto;
   height: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000338}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000341}}
+#event_context #join_box #event_cancel_box {
+  background-color: #B0E0E6;
+  width: 200px;
+  height: 60px;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000352}}
+#event_context #join_box #event_cancel_box > div {
+  background-color: #B0E0E6;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000366}}
 #event_context .event_item_title {
   font-weight: bold;
   font-size: large;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000371}}
 #event_context .date_time_string {
   font-size: large;
   color: blue;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000350}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000378}}
 #event_context #participant_table > p {
   font-weight: bold;
   font-size: large;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000356}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000384}}
 #event_context #participant_table .participant_list {
   display: flex;
   flex-wrap: wrap;
   margin-right: 10px;
   margin-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000365}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000393}}
 #event_context #participant_table .profile_container {
   display: flex;
   margin-left: 5px;
@@ -390,15 +415,15 @@
   background-color: #FAEBD7;
   margin-bottom: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\00003100}}
 #event_context #participant_table .profile_container .profile_name {
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000376}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\00003104}}
 #event_context #participant_table .profile_container .profile_rightbox {
   max-width: 250px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000380}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\00003108}}
 #event_context #participant_table .profile_container p {
   margin-bottom: 2px;
   margin-left: 5px;
