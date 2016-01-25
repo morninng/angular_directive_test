@@ -26,7 +26,7 @@ angular.module('directiveTestApp')
     $scope.debater_userobj_array = new Array();
     $scope.deb_or_aud_userobj_array = new Array();
     $scope.motion = null;
-    $scope.already_login = true;
+    $scope.already_login = false;
     
     var currentUser = Parse.User.current();
 
@@ -106,10 +106,6 @@ angular.module('directiveTestApp')
 		}
 		var event_id = event_obj.id;
 
-
-		console.log("join");
-     	event_obj.set("participants", currentUser);
-
 		Parse.Cloud.run('JoinEvent', { id: event_id, category: $scope.participant_category},{
 			success: function(obj) {
 				console.log(obj);
@@ -122,7 +118,30 @@ angular.module('directiveTestApp')
 	}
 
 
+	$scope.cancel_event = function(){
 
+		if(!event_obj){
+			return;
+		}
+		if(!currentUser){
+			alert("you need to login to participate/cancel event");
+		}
+		var event_id = event_obj.id;
+
+		Parse.Cloud.run('CancelEvent', { id: event_id, category: $scope.participant_category},{
+			success: function(obj) {
+				console.log(obj);
+			},
+			error: function(error){
+				alert(error.message);
+			}
+		});
+
+
+
+
+
+	}
 
 
 

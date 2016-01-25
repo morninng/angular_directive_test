@@ -364,8 +364,8 @@
   margin: auto;
   height: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000341}}
-#event_context #join_box #event_cancel_box {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000342}}
+#event_context #event_cancel_box {
   background-color: #B0E0E6;
   width: 200px;
   height: 60px;
@@ -373,8 +373,8 @@
   display: table-cell;
   vertical-align: middle;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000352}}
-#event_context #join_box #event_cancel_box > div {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000353}}
+#event_context #event_cancel_box > div {
   background-color: #B0E0E6;
   position: absolute;
   top: 0;
@@ -384,30 +384,30 @@
   margin: auto;
   height: 30px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000367}}
 #event_context .event_item_title {
   font-weight: bold;
   font-size: large;
   text-decoration: underline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000371}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000372}}
 #event_context .date_time_string {
   font-size: large;
   color: blue;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000378}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000379}}
 #event_context #participant_table > p {
   font-weight: bold;
   font-size: large;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000384}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000385}}
 #event_context #participant_table .participant_list {
   display: flex;
   flex-wrap: wrap;
   margin-right: 10px;
   margin-left: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000393}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\0000394}}
 #event_context #participant_table .profile_container {
   display: flex;
   margin-left: 5px;
@@ -415,15 +415,15 @@
   background-color: #FAEBD7;
   margin-bottom: 5px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\00003100}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\00003101}}
 #event_context #participant_table .profile_container .profile_name {
   font-weight: bold;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\00003104}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\00003105}}
 #event_context #participant_table .profile_container .profile_rightbox {
   max-width: 250px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\00003108}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/home\/morninng\/Angular\/Directive_test\/app\/sass\/_event_context\.scss}line{font-family:\00003109}}
 #event_context #participant_table .profile_container p {
   margin-bottom: 2px;
   margin-left: 5px;

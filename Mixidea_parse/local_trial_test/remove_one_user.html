@@ -1,0 +1,107 @@
+
+<html>
+ <head>
+   <meta charset="utf-8">
+
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
+
+
+	<script>
+      var parse_app_id = "Uk00xv536Y7jwNUtwXKUwKpo3zU16KKmVnUPaiyb";
+      var parse_js_key = "85EGgk7ruUdSiORTqeexhnObs49i0pnMDwgqwUBA";
+	  Parse.initialize(parse_app_id, parse_js_key);
+  </script>
+
+ </head>
+
+
+<body>
+
+
+
+<input type="button" onclick="test1('G6PZ1htZ6C')" value = "test1">
+<input type="button" onclick="test1('8lf9PiG3QG')" value = "test2">
+<input type="button" onclick="test1('TYy2ZqXtNx')" value = "test3">
+
+<script>
+function test1(value){
+	var event_id = "DvWLYPKVny";
+	var user_id = value;
+
+
+	var EventObj = Parse.Object.extend("Event");
+	var event_query = new Parse.Query(EventObj);
+	event_query.include("game");
+	event_query.get(event_id, {
+		success: function(event_obj) {
+			var game_obj = event_obj.get("game");
+
+			var current_participant = game_obj.get("participants");
+			console.log(current_participant);
+			var filtered_participant = current_participant.filter(
+				function(value){
+					return value.id !=user_id;
+				}
+			);
+
+			game_obj.set("participants", filtered_participant);
+			var check2 = game_obj.get("participants");
+
+			var participant_category = event_obj.get("participants_category");
+			var audience_category_array = participant_category.Audience;
+			var filtered_audience_category = audience_category_array.filter(
+				function(value){
+					return value !=user_id;
+				}
+			);
+			var debater_category_array = participant_category.Debater;
+			var filtered_debater_category = debater_category_array.filter(
+				function(value){
+					return value !=user_id;
+				}
+			);
+			var deb_or_aud_category_array = participant_category.Aud_or_Debater;
+			var filtered_deb_or_aud_category = deb_or_aud_category_array.filter(
+				function(value){
+					return value !=user_id;
+				}
+			);
+			var updated_participant_category = new Object();
+			updated_participant_category["Audience"] = filtered_audience_category;
+			updated_participant_category["Debater"] = filtered_debater_category;
+			updated_participant_category["Aud_or_Debater"] = filtered_deb_or_aud_category;
+
+			event_obj.set("participants_category", updated_participant_category);
+
+			game_obj.save().then(function(){
+				console.log("saving game succeed");
+				return event_obj.save();
+
+			}).then(function(result) {
+				console.log("saving event succeed")
+				return;
+
+			}, function(obj, error){
+				console.log(error.message)
+				return;
+			});
+
+
+
+		},
+		error: function(obj, error){
+			alert(error.message);
+		}
+	});
+
+
+
+
+}
+
+</script>
+
+
+
+</html>
+

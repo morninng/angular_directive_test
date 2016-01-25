@@ -38,30 +38,31 @@ $join_box_background_color: #B0E0E6;
 			}
 
 		}
-		#event_cancel_box{
-			background-color:$join_box_background_color;
-			width:200px;
-			height:60px;
-
-			position: relative;
-			display: table-cell;
-			vertical-align: middle;
-
-
-
-			> div {
-				background-color:$join_box_background_color;
-				position: absolute;
-				top: 0;
-				bottom: 0;
-				left:0;
-				right:0;
-				margin: auto;
-				height:30px;
-			}
-		}
-
 	}
+	#event_cancel_box{
+		background-color:$join_box_background_color;
+		width:200px;
+		height:60px;
+
+		position: relative;
+		display: table-cell;
+		vertical-align: middle;
+
+
+
+		> div {
+			background-color:$join_box_background_color;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left:0;
+			right:0;
+			margin: auto;
+			height:30px;
+		}
+	}
+
+	
 
 	.event_item_title {
 		font-weight:bold;

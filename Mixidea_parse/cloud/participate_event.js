@@ -8,6 +8,7 @@ var do_not_execute = false;
 
 Parse.Cloud.define("JoinEvent", function(request, response) {
 
+  Parse.Cloud.useMasterKey();
 
   console.log(request.user);
   var user_obj = request.user;
@@ -29,10 +30,8 @@ Parse.Cloud.define("JoinEvent", function(request, response) {
       var game_obj = event_obj.get("game");
       if(!game_obj){
         response.error("event data is corrupted");
-        return; 
+        return;
       }
-
-
 
       var current_participant = game_obj.get("participants");
 

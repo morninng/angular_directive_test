@@ -1,0 +1,41 @@
+http://webdemo.dac.co.jp/mixidea/test_file/%E3%83%86%E3%82%B9%E3%83%88HTML_participate_event.html
+　→テストサイト
+　
+
+(１)非ログイン状態で参加
+　→期待動作：you need to login to cancel event　というアラートが出ること。
+　
+　→実施操作
+　　　ログアウトして参加ボタンをおす。
+ →結果:OK
+　
+（２）存在しないEventIDへ参加
+　→期待動作：event might be deletedというアラートが出ること。
+　　　→実施操作
+　　　eventid="aaa"として参加
+ →結果OK
+　
+　
+（３）GameオブジェクトへのリンクがないEventへの参加　
+　　→"event data is corrupted"というアラートが出ること
+　　　　→実施操作
+　　　　GameObjectをEventから消してから実施
+　 →結果OK
+　
+（４）参加していない場合。
+　　→"you have not joined this event."というアラートがでること
+ →結果OK
+
+
+
+　　
+　　
+　　
+■正常動作確認事項
+
+　参加ユーザのポインタが、GameObjectから削除されていること
+　参加カテゴリからユーザIDが削除されていること。
+　
+　
+
+
