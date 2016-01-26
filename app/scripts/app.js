@@ -30,6 +30,11 @@ angular
         controller: 'EventContextCtrl',
         controllerAs: 'eventContext'
       })
+      .when('/user_profile/:user_id', {
+        templateUrl: 'views/userprofile.html',
+        controller: 'UserprofileCtrl',
+        controllerAs: 'UserProfile'
+      })
       .otherwise({
         redirectTo: '/'
       });
