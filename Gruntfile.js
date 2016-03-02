@@ -480,7 +480,7 @@ module.exports = function (grunt) {
 
 
 
-
+/*
 module.exports = function (grunt2) {
 
   grunt2.loadNpmTasks('grunt-ftp-deploy');
@@ -506,3 +506,5 @@ module.exports = function (grunt2) {
   });
   grunt2.registerTask('deploy',['ftp-deploy']);
 }
+
+*/

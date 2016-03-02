@@ -35,6 +35,11 @@ angular
         controller: 'UserprofileCtrl',
         controllerAs: 'UserProfile'
       })
+      .when('/isolate_scope', {
+        templateUrl: 'views/isolate_scope.html',
+        controller: 'IsolateScopeCtrl',
+        controllerAs: 'isolateScope'
+      })
       .otherwise({
         redirectTo: '/'
       });

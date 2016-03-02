@@ -103,7 +103,7 @@ angular.module('directiveTestApp')
 
       var Event = Parse.Object.extend("Event");
       var mixidea_event = new Event();
-      mixidea_event.set("date_time", $scope.date_time);
+      mixidea_event.set("date_time", $scope.$parent.$parent.date_time);
       mixidea_event.set("deb_style", $scope.deb_style);
       mixidea_event.set("context", $scope.context);
       mixidea_event.set("deb_skill", $scope.exp_deb_skill);

@@ -1,0 +1,8 @@
+
+
+yo angular:route isolate_scope
+
+yo angular:directive my-book
+
+
+yo angular:directive my-book
