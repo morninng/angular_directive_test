@@ -6,3 +6,9 @@ yo angular:directive my-book
 
 
 yo angular:directive tab
+
+
+yo angular:directive tab-dataobj
+
+
+yo angular:route custom_sample

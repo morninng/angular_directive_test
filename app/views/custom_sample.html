@@ -40,34 +40,11 @@
 </style>
 
 
-<p>This is the isolate_scope view.</p>
-{{name}}
-
-<br>
-<div>
-this is my book directive test
-<my-book my-info="data"></my-book>
-</div>
-
-<div ng-repeat= "book in arguments_id_array">
-<my-book my-info="book" click-cont="onclick()"></my-book>
-</div>
-<br/>
-
-
-<div>
-<my-cart>
-	<my-cart-item title="aaa" price=111></my-cart-item>
-	<my-cart-item title="bbb" price=1111></my-cart-item>
-	<my-cart-item title="ccc" price=11111></my-cart-item>
-</my-cart>
-</div>
- 
-<my-tab-panel active=1>
-	<my-tab title="aaa">
+<tab-dataobj-panel active=1>
+	<tab-dataobj title="aaa">
 	AAA AAA AAA
-	</my-tab>
-	<my-tab title="bbb">
+	</tab-dataobj>
+	<tab-dataobj title="bbb">
 	BBB BBB BBB
-	</my-tab>
-</my-tab-panel>
+	</tab-dataobj>
+</tab-dataobj-panel>

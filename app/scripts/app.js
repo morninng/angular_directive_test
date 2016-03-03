@@ -40,6 +40,11 @@ angular
         controller: 'IsolateScopeCtrl',
         controllerAs: 'isolateScope'
       })
+      .when('/custom_sample', {
+        templateUrl: 'views/custom_sample.html',
+        controller: 'CustomSampleCtrl',
+        controllerAs: 'customSample'
+      })
       .otherwise({
         redirectTo: '/'
       });
