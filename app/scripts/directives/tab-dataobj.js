@@ -12,7 +12,7 @@ angular.module('directiveTestApp')
       require: '^^tabDataobjPanel',
       replace:true,
       transclude:true,
-      template: '<div ng-show="show" ng-transclude></div>',
+      templateUrl: 'views/tabDataobj.html',
       scope: {title:'@'},
       restrict: 'E',
       link: function postLink(scope, element, attrs, panelController) {
@@ -26,14 +26,7 @@ angular.module('directiveTestApp')
       transclude: 'true',
       replace:true,
       scope: {active: '@'},
-      template: '<div class="container">' +
-      			' <ul>' +
-      			'  <li ng-repeat="tab in tabs" ng-class="{selected:tab.selected}">' +
-      			'   <a href="" ng-click="onselect(tab)">{{tab.title}}</a>' +
-      			'  </li>' +
-      			' </ul>' +
-      			' <div class="panel" ng-transclude></div>' +
-      			'</div>',
+      templateUrl: 'views/tabDataobjPanel.html',
       controller: function($scope){
 
       	$scope.tabs = [];
