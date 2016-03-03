@@ -1,8 +1,29 @@
 <div class="container">
+ 
+<input value="add new obj" ng-click="add_new_obj()" type="button">
+<!--
 <ul>
   <li ng-repeat="tab in tabs" ng-class="{selected:tab.selected}">
     <a href="" ng-click="onselect(tab)">{{tab.title}}</a>
   </li>
 </ul>
 <div class="panel" ng-transclude></div>
+</div>
+-->
+
+tab_contents
+
+<ul>
+  <li ng-repeat="tab in tab_contents" ng-class="{selected:tab.selected}">
+    <a href="" ng-click="onselect(tab)">{{tab.title}}</a>
+  </li>
+</ul>
+<div class="panel">
+  <div ng-repeat="tab in tab_contents">
+	<tab-dataobj tab-info="tab">
+	</tab-dataobj>
+  </div>
+
+
+</div>
 </div>

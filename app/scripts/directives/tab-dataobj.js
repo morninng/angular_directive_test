@@ -13,10 +13,10 @@ angular.module('directiveTestApp')
       replace:true,
       transclude:true,
       templateUrl: 'views/tabDataobj.html',
-      scope: {title:'@'},
+      scope: {tab_info:'=tabInfo'},
       restrict: 'E',
       link: function postLink(scope, element, attrs, panelController) {
-        panelController.addTab(scope);
+        console.log(scope);
       }
     };
   })
@@ -29,25 +29,27 @@ angular.module('directiveTestApp')
       templateUrl: 'views/tabDataobjPanel.html',
       controller: function($scope){
 
-      	$scope.tabs = [];
-      	this.addTab = function(tab){
-      		$scope.tabs.push(tab);
-      		if($scope.tabs.length - 1 === Number($scope.active)){
-      			$scope.onselect(tab);
-      		}
-      	};
+      	$scope.tab_contents = [
+      		{title:"aaa", content:"AAAA", selected: false},
+      		{title:"bbb", content:"BBBB", selected: true}
+      	];
 
       	$scope.onselect = function(selected_tab){
-      		angular.forEach($scope.tabs, function(t){
-      			t.show=false;
-      			t.selected = false;
-      		});
-      		selected_tab.show = true;
+
+      		for (var i=0; i< $scope.tab_contents.length; i++){
+      			$scope.tab_contents[i].selected=false;
+      		}
+
       		selected_tab.selected = true;
       		console.log("tabs object");
       		console.log($scope.tabs);
       	};
-                                                                                                                     
+
+      	$scope.add_new_obj = function(){
+      		var tab_obj = {title:"ccc", content:"CCCC", selected: false}
+      		$scope.tab_contents.push(tab_obj);
+      	}
+        
       }
     };
   });
