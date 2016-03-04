@@ -15,7 +15,7 @@ angular.module('directiveTestApp')
       templateUrl: 'views/teamDiscussArguments.html',
       link: function postLink(scope, element, attrs) {
 
-      	var event_id_val = "-KBzYqLToTsxhkWNQDl4";
+      	var event_id_val = "-KC-oL7c0VyHS2WjHAiG";
 
       	scope.arg_list = new Array();
       	scope.defintro_list = new Array();
@@ -48,25 +48,23 @@ angular.module('directiveTestApp')
 				});
 			}
 		});
-
-
-		var defintro_id_path = "event_related/Article_Context/" + event_id_val + "/" 
-						+ deb_style + "/" + team + "/def_intro";
-		console.log(defintro_id_path);
-		var defintro_id_ref = root_ref.child(defintro_id_path);
-		defintro_id_ref.on("child_added", function(snapshot, previousKey){
-			var arg_id_key = snapshot.key();
-			$timeout(function(){
-				scope.defintro_list.push({arg_id:arg_id_key});
-			});
-		});
-
 		scope.add_argument = function(){
 			console.log("add argument");
 			var dummy_content = {dummy:true};
 			argument_id_ref.push(dummy_content);
 		}
  
+
+
+ 		var defintro_id_path = "event_related/Article_Context/" + event_id_val + "/identifier/" 
+						+ deb_style + "/" + team + "/def_intro";
+		var defintro_id_ref = root_ref.child(defintro_id_path);
+		defintro_id_ref.on("child_added", function(snapshot, previousKey){
+			var defintro_id_key = snapshot.key();
+			$timeout(function(){
+				scope.defintro_list.push({arg_id:defintro_id_key});
+			});
+		});
 
 
       }

@@ -22,5 +22,6 @@ yo angular:route firebase_article
 yo angular:directive team-discuss-arguments
 
 yo angular:directive one-argument
+yo angular:directive one-defintro
 
 
