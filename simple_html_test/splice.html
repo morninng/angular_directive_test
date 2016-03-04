@@ -1,0 +1,25 @@
+
+
+<script>
+var arg_id_key_removed = "1111";
+var arg_list = [
+	{arg_id:"0000",content:"aa"},
+	{arg_id:"1111",content:"bb"},
+	{arg_id:"2222",content:"cc"},
+	{arg_id:"3333",content:"dd"}
+];
+
+console.log(arg_list);
+
+var n=-1;
+for(var i=0; i< arg_list.length; i++){
+	if(arg_list[i].arg_id == arg_id_key_removed){
+		n=i;
+	}
+}
+
+if(n!=-1){
+		arg_list.splice(n,1);
+}
+console.log(arg_list);
+</script>

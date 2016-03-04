@@ -34,9 +34,25 @@ angular.module('directiveTestApp')
 			});
 		});
 		argument_id_ref.on("child_removed", function(snapshot, previousKey){
-			var arg_id_key = snapshot.key();
+			var arg_id_key_removed = snapshot.key();
+			var current_id_array = scope.arg_list;
+			var n = -1
+			for(var i=0; i< scope.arg_list.length; i++){
+				if(scope.arg_list[i].arg_id == arg_id_key_removed){
+					n=i;
+				}
+			}
+			if(n!=-1){
+				$timeout(function(){
+					scope.arg_list.splice(n,1);
+				});
+			}
 			// write here later
 		});
+
+
+
+
 
 		var defintro_id_path = "event_related/Article_Context/" + event_id_val + "/" 
 						+ deb_style + "/" + team + "/def_intro";

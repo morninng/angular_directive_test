@@ -53,6 +53,13 @@ angular.module('directiveTestApp')
         }
 
 
+        var one_argument_id_path = "event_related/Article_Context/" + event_id + "/identifier/" 
+                + deb_style + "/" + team + "/arguments/" + arg_id;
+        var one_argument_id_ref = root_ref.child(one_argument_id_path);
+        scope.remove_argument = function(){
+          console.log("remove" + arg_id);
+          one_argument_id_ref.set(null);
+        }
 
 
       }
