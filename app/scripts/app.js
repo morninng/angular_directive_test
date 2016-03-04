@@ -45,7 +45,13 @@ angular
         controller: 'CustomSampleCtrl',
         controllerAs: 'customSample'
       })
+      .when('/firebase_article', {
+        templateUrl: 'views/firebase_article.html',
+        controller: 'FirebaseArticleCtrl',
+        controllerAs: 'firebaseArticle'
+      })
       .otherwise({
         redirectTo: '/'
       });
   });
+

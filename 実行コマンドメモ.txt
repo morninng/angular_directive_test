@@ -12,3 +12,15 @@ yo angular:directive tab-dataobj
 
 
 yo angular:route custom_sample
+
+yo angular:route firebase_article
+
+-KBvwp22fI_03gT7RyZI
+
+
+
+yo angular:directive team-discuss-arguments
+
+yo angular:directive one-argument
+
+
