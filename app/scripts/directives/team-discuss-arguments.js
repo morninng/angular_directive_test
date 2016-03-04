@@ -47,11 +47,7 @@ angular.module('directiveTestApp')
 					scope.arg_list.splice(n,1);
 				});
 			}
-			// write here later
 		});
-
-
-
 
 
 		var defintro_id_path = "event_related/Article_Context/" + event_id_val + "/" 
@@ -65,7 +61,11 @@ angular.module('directiveTestApp')
 			});
 		});
 
-
+		scope.add_argument = function(){
+			console.log("add argument");
+			var dummy_content = {dummy:true};
+			argument_id_ref.push(dummy_content);
+		}
  
 
 
